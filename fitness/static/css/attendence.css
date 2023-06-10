@@ -1,0 +1,22 @@
+*{
+    font-family: 'poppins' ,sans-serif;
+}
+
+
+
+body{
+    background-image: url("/static/assets/img/gym-girl.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+}
+table,
+thead {
+  color: orangered;
+  
+}
+th, tr{
+    color:white;
+}

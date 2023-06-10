@@ -1,0 +1,23 @@
+*{
+    font-family: 'poppins' ,sans-serif;
+}
+body{
+    background-image: url("/static/assets/img/newone.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+}
+form{
+    display: flex;
+flex-direction: column;
+width: 300px;
+height: fit-content;
+
+border: 1px solid black;
+align-items: center;
+margin: auto;
+margin-top: 50px;
+
+}
