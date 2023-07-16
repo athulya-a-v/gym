@@ -1,0 +1,83 @@
+{% extends 'adminbase.html'%}
+
+{% block body %}
+
+<body class="">
+  <section class="h-100">
+    <form action="" name="registerform" method="POST" onsubmit="">
+      {% csrf_token %}
+      <div class="container py-5 h-30">
+        <div class="row d-flex justify-content-center align-items-center h-30">
+          <div class="col">
+            <div class="card  mx-auto card-registration my-2 card w-100">
+
+
+              <div class="card-body p-md-8 text-light bg-black">
+               <div class="row  mt-0" ><h4 class="mb-5 text-uppercase text-center ">HEALTH STATUS</h4></div>
+
+               <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <label class="form-label text-light" for="form3">First Name</label>
+                    <input type="text" name="regname1" id="form3"  class="form-control form-control-sm  bg-dark" placeholder="First Name"/>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <label class="form-label text-light" for="form3Example1n">Last Name</label>
+                    <input type="text"  name= "regname2" id="form4" class="form-control form-control-sm bg-dark" placeholder="Last Name" />
+                   
+                  </div>
+                </div>
+              </div>
+
+
+                
+                <div class="form-outline mb-2">
+                  <label class="form-label text-light" for="form8">Gender</label>
+                  <input type="text" name="regpin"  id="form8" class="form-control form-control-sm bg-dark  text-light" placeholder="" maxlength="6" disabled />
+                  
+                </div>
+
+
+                <div class="form-outline mb-2">
+                  <label class="form-label text-light" for="form8">Blood Group</label>
+                  <input type="text" name="regpin"  id="form8" class="form-control form-control-sm bg-dark  text-light" placeholder="" maxlength="6" />
+                  
+                </div>
+                <div class="form-outline mb-2">
+                  <label class="form-label text-light" for="form8">Height</label>
+                  <input type="text" name="regpin"  id="form8" class="form-control form-control-sm bg-dark text-light" placeholder="" maxlength="6" />
+                  
+                </div>
+                <div class="form-outline mb-2">
+                  <label class="form-label text-light" for="form8">Weight</label>
+                  <input type="text" name="regpin"  id="form8" class="form-control form-control-sm bg-dark text-light" placeholder="" maxlength="6" />
+                  
+                  <div class="form-outline mb-2">
+                    <label class="form-label text-light" for="form3Example8">Health Status</label>
+                    <input type="text" name="regaddress" id="form7" class="form-control form-control-sm bg-dark" placeholder="" />
+                    
+                  </div>
+
+                
+                <div class="d-flex justify-content-between pt-3">
+                  <button type="reset" class="btn btn-light btn-sm w-50">Reset all</button>
+                  <button type="submit" class="btn btn-warning btn-sm ms-2 w-50">Update</button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </section>
+</body>
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/feed.css' %}">
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+</head>
+<body>
+    <form role="form"  method="POST">
+        {% csrf_token %}
+    <div class="container">
+        
+                    <div class=" p1 p-4">
+                        
+
+                            <div class="row mb-4">
+                                <div class="col-md-12 ps-0">
+        
+                            <h2 class="justify-content-center"> LET US KNOW!</h2>
+                                </div>
+                                </div>
+
+
+                        <div class="row mb-4">
+                          <div class="col-md-12 ps-0 justify-content-center">
+                            <input type="text" class="form-control" name="feedname" placeholder="Name">
+                          </div>
+                          </div>
+                          <div class="row mb-4">
+                            <div class="col-md-12 ps-0 justify-content-center">
+                              <input type="email" class="form-control" name="feedmail" placeholder="Email">
+                            </div>
+                            </div>
+                <div class="row mb-4">
+                    <div class="col-md-12 ps-0 justify-content-center">
+                        
+                        <textarea class="form-control py-2 w-100" id="text" name="feedtext" placeholder="message"></textarea>
+                    </div>
+                </div>
+
+
+                <div class="row ">
+                    <div class="col-md-12 py-4 mb-2 justify-content-center">
+                        <button type="submit" class="btn btn-danger btn-lg btn-block " value="submit">Submit feedback</button>
+                    </div>
+                </div>
+                        
+                    </div>
+                </div>
+                </div>
+            </div>
+           
+</body>
+</html>

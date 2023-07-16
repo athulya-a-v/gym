@@ -1,0 +1,8 @@
+.select{
+    height: 45px;
+    width: 100%;
+}
+form{
+    width: fit-content;
+    height: auto;
+}

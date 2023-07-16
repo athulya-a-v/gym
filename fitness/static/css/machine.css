@@ -1,7 +1,13 @@
 *{
     font-family: 'poppins' ,sans-serif;
 }
-
+body{
+   background-image: url("static/assets/img/admin-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
 
 header{
         color:black;
@@ -11,13 +17,4 @@ header{
         padding: 10px 0 10px 0;
         text-indent: 50px;
      }
-     p{
-
-        color:black;
-        font-size: 20px;
-        display: flex;
-        justify-content: center;
-        padding: 10px 0 10px 0;
-        text-indent: 50px;
-
-     }
+    

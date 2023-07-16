@@ -2,7 +2,7 @@
     font-family: 'poppins' ,sans-serif;
 }
 body{
-    background-image: url("/static/assets/img/newone.jpg");
+    background-image: url("/static/assets/img/R.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -15,9 +15,18 @@ flex-direction: column;
 width: 300px;
 height: fit-content;
 
-border: 1px solid black;
+
+
 align-items: center;
 margin: auto;
 margin-top: 50px;
 
+}
+.p1{
+background: #ffff;
+border-radius: 10px;
+}
+input{
+    outline: none;
+    border-bottom: 1px solid #ccc;
 }

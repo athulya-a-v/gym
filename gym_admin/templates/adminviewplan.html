@@ -1,0 +1,42 @@
+{% extends 'adminbase.html'%}
+
+{% block body %}
+
+
+<div class=" vh-100 attendance">
+    <div class="container pt-5">
+        <h2 class="text-uppercase text-center fw-bold text-white report_font pb-4">Membership Plan Details</h2>
+
+     
+<table class="table">
+    <thead>
+      <tr class="table-dark">
+        <th scope="col">#</th>
+        <th scope="col"> PLAN NAME</th>
+        <th scope="col">DESCRIPTION</th>
+        <th scope="col">VALIDITY</th>
+        <th scope="col">AMOUNT</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+        {% for data in ad_viewplan%}
+      <tr class="table-dark">
+        
+        <th scope="row">{{forloop.counter}}</th>
+        
+        <td>{{data.plan_name}}</td>
+        <td>{{data.plan_description}}</td>
+        <td>{{data.plan_validity}}</td>
+        <td>{{data.plan_amount}}</td>
+        
+
+        
+        
+      </tr>
+      {% endfor%}
+      
+      
+    </tbody>
+  </table>
+  {% endblock %}

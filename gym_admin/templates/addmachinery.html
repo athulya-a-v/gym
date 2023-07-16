@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Preview Before Upload</title>
+  <!--Font Awesome CDN-->
+  <link rel="stylesheet"
+    href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css' %}">
+  <!--Google Font-->
+  <link href="{% static 'https://fonts.googleapis.com/css2?family=Rubik&display=swap' %}" rel="stylesheet">
+  <link href="{% static 'css/addmachine.css'%}" rel="stylesheet" />
+  <!--Stylesheet-->
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+
+  <form action="" name="registerform" method="POST" onsubmit="">
+    {% csrf_token %}
+    
+      <div class="container py-5 h-30">
+        <div class="row d-flex justify-content-center align-items-center h-30">
+          <div class="col">
+            <div class="card  mx-auto card-registration my-2 card w-50">
+
+
+              <div class="card-body p-md-8 text-black">
+                <h4 class="mb-5 text-uppercase text-center">register here!</h4>
+
+
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+                      <label class="form-label text-black" for="form3">First Name</label>
+                      <input type="text" name="regname1" id="form3" class="form-control form-control-sm  inputtext"
+                        placeholder="First Name" />
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+                      <label class="form-label text-black" for="form3Example1n">Last Name</label>
+                      <input type="text" name="regname2" id="form4" class="form-control form-control-sm reginput"
+                        placeholder="Last Name" />
+
+                    </div>
+                  </div>
+                </div>
+                
+
+                <figure class="image-container">
+                  <img id="chosen-image" src="{%static 'assets/img/admin-bg.jpg'%}">
+                  <figcaption id="file-name"></figcaption>
+                </figure>
+
+                <input type="file" id="upload-button" accept="image/*">
+                <label for="upload-button" class="labelimg">
+                  <i class="fas fa-upload"></i> &nbsp; Choose A Photo
+                </label>
+               
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    
+
+
+    <!--Script-->
+    <script src="{% static 'js/script.js' %}"></script>
+  </form>
+</body>
+
+</html>

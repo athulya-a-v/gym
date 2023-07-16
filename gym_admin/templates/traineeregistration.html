@@ -1,0 +1,77 @@
+{% extends 'adminbase.html' %}
+{% block body %}
+
+
+
+
+
+<div class="container">
+
+
+
+
+  <div class="row">
+    <div class="mx-auto col-10 col-md-8 col-lg-6">
+      <form class=" form12 bg-light h-auto" role="form" method="POST">
+        {% csrf_token %}
+        <div class="row w-100 bg-dark">
+          <div class="col-md-12">
+          <h1 class="text-center  text-white">create password</h1>
+        </div>
+        </div>
+        <div class="row w-100  ">
+          <div class="col-md-6">
+            <label for="" class="">First Name</label>
+                   <input type="text" class=" reginput form-control" name="tfname">
+          </div>
+        
+        
+          <div class="col-md-6">
+            <label for="" class="form-label ">Last Name</label>
+            <input type="text" class=" reginput form-control " name="tlname">
+          </div>
+          </div>
+
+          <div class="row w-100">
+            <div class="col-md-6">
+              <label for="" class="">Username</label>
+                     <input type="text" class=" reginput form-control" name="tusername">
+            </div>
+          
+          
+            <div class="col-md-6">
+              <label for="" class="">Email</label>
+              <input type="email" class=" reginput form-control" name="temail">
+            </div>
+            </div>
+
+            <div class="row w-100">
+              <div class="col-md-6">
+                <label for="" class="">Password</label>
+                       <input type="password" class=" reginput form-control" name="tpassword">
+              </div>
+            
+            
+              <div class="col-md-6">
+                <label for="" class="">Confirm Password</label>
+                <input type="password" class=" reginput form-control">
+              </div>
+              </div>
+         
+        
+
+        <div class="row w-100">
+          <div class="col-md-6">
+            <button class="btn btn-danger" type="submit" >Create</button>
+
+          </div>
+          <div class="col-md-6">
+            <button class="btn btn-danger" type="reset">Reset</button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div> 
+{% endblock %}

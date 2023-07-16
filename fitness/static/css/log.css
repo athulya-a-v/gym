@@ -1,7 +1,7 @@
 *{
     font-family: 'poppins' ,sans-serif;
 }
-body{
+.logbody{
     background-image: url("/static/assets/img/gym-workout.jpg");
     background-size: cover;
     background-position: center;
@@ -9,91 +9,96 @@ body{
     background-repeat: no-repeat;
     
 }
-.box{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 90vh;
-    
-    
+.loglabel{
 
+    color: #fff;
+    text-decoration: none;
 }
-.container{
-    width: 35px;
-    display: flex;
-    flex-direction: column;
-    padding: 10px 0 10px 0;
-    align-items: center;
-}
-span{
+
+.logspan{
     color: #fff;
     font-size: small;
     display: flex;
     justify-content: center;
     padding: 10px 0 10px 0;
 }
-header{
+.logheader{
     color: #fff;
     font-size: 30px;
     display: flex;
     justify-content: center;
     padding: 10px 0 10px 0;
+    
+
+}
+.loginput{
+    height: 45px;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    color: #fff;
+    padding: 0 0 0 75px;
+    background: rgba(255, 255, 255, 0.1);
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    margin: 5px 0;
+
+
+}
+.logselect{
+    height: 45px;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    color: #fff;
+    padding: 0 0 0 75px;
+    background: rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+
+
 }
 .input-field{
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
+    
    
-
-}
-.input{
-    height: 45px;
-    width: 87%;
-    border: none;
-    outline: none;
-    border-radius: 20px;
-    color: #fff;
-    padding: 0 0 0 45px;
-    background: rgba(255, 255, 255, 0.1);
 }
 i{
     position: relative;
     top: -33px;
     left: 17px;
     color: #fff;
-
 }
-::-webkit-input-placeholder{
-    color:#fff;
-
-}
-.submit{
+.logsubmit{
     border: none;
     border-radius: 30px;
     font-size: 15px;
     height: 45px;
-    width: 100px;
     outline: none;
+    width: 100%;
     background: rgba(255, 255, 255, 0.7);
     cursor: pointer;
-    transition: .3s;
-
+    transition: 3s;
 }
-.submit:hover{
+.logsubmit:hover{
     box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+}
+.bottom{
+display:flex;
+flex-direction: column;
+justify-content: space-between;
+font-size: small;
+color: #fff;
+margin-top: 10px;
+}
+.left{
+    display: flex;
 
 }
-.two-col{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    color: #fff;
-    font-size: small;
-    margin-top: 10px;
-}
-label a{
-    text-decoration: none;
-    color: #fff;
-}
+
+
+
 
 

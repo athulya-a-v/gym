@@ -7,4 +7,24 @@
     .card-registration .select-arrow {
     top: 9px;
     }
+    .regbody{
+        background-image: url("/static/assets/img/gym-workout.jpg");
+        background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    }
+    .reginput{
+        padding: 10px;
+        border: 0;
+        box-shadow: 0 0 15px 4px rgba(0,0,0,0.06);
+        border-radius: 10px;
+    }
+    .btn1{
+        border: 0;
+        box-shadow: 0 0 15px 4px rgba(0,0,0,0.06);
+        border-radius: 10px;
+
+    }
+    
     

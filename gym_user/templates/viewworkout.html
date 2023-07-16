@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <div class="container bg-light">
+      
+          <div class="p-2">
+          
+            <div class="row">
+              <div class="col-md-4 p-0 d-flex align-items-center ">
+              <label for="text1" class=" text-dark ">Plan name</label>
+            </div>
+            <div class="col-md-8 ps-0">
+              <input type="text" class="form-control" name="workplanname" id="id" value="{{planuser.plan_name}}">
+            </div>
+            </div>
+      
+          
+            <div class="row ">
+              <div class="col-md-4 p-0 d-flex align-items-center">
+                <label for="text2" class=" text-dark">Program duration</label>
+              </div>
+              <div class="col-md-8 ps-0">
+                <input type="text" class="form-control" name="programduration" id="id" value="{{planuser.plan_description}}">
+              </div>
+            </div>
+            <div class="row ">
+              <div class="col-md-4 p-0 d-flex align-items-center">
+                <label for="text3" class=" text-dark">Workout type</label>
+              </div>
+              <div class="col-md-8 ps-0">
+                <input type="text" class="form-control" name="workouttype" id="id" value="{{planuser.workout_type}}">
+              </div>
+            </div>
+            <div class="row ">
+              <div class="col-md-4 p-0 d-flex align-items-center">
+                <label for="text4" class=" text-dark">Days per week</label>
+              </div>
+              <div class="col-md-8 ps-0">
+                <input type="text" class="form-control" name="daysperweek" id="id" value="{{planuser.days_per_week}}">
+              </div>
+            </div>
+            <div class="row ">
+              <div class="col-md-4 p-0 d-flex align-items-center">
+                <label for="text5" class=" text-dark">Time per workout</label>
+              </div>
+              <div class="col-md-8 ps-0">
+                <input type="text" class="form-control" name="timeperworkout" id="id" value="{{planuser.time_per_workout}}">
+              </div>
+            </div>
+            <div class="row ">
+              <div class="col-md-4 p-0 d-flex align-items-center">
+                <label for="text2" class=" text-dark">Equipment required</label>
+              </div>
+              <div class="col-md-8 ps-0">
+                <input type="text" class="form-control" name="Equipmentrequired" id="id" value="{{planuser.equipment_required}}">
+              </div>
+            </div>
+            <div class="row ">
+              <div class="col-md-4 p-0 d-flex align-items-center">
+                <label for="text2" class=" text-dark">Target gender</label>
+              </div>
+              <div class="col-md-8 ps-0">
+                <input type="text" class="form-control" name="targetgender" id="id" value="{{planuser.target_gender}}">
+              </div>
+              
+      
+          </div>
+          
+        
+            </div>
+            
+            <div class="row justify-content-center">
+              <div class="col justify-content-center">
+                <button type="submit" class="btn btn-warning btn-sm">close</button>
+              </div>
+              
+            </div>
+      
+          </div>
+        </div>
+      </form>
+</body>
+</html>

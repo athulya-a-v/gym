@@ -1,54 +1,21 @@
+{% extends 'fitness/base.html' %}
+{% block body %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  {% load static %}
-  <link rel="stylesheet" href="{% static 'css/registration.css' %}">
-    <link href="{% static 'css/styles.css'%}" rel="stylesheet" />
-
-    <script>
-      function validateform()
-      {
-    var name=document.registerform.name.value;
-    var password=document.registerform.password.value;
     
-    if(name==null || name=="")
-    {
-      alert("Name connot be blank");
-      return false;
-    }
-    else if(password.length<8)
-    {
-    alert("Password must have atleast 8 characters");
-    
-    }
-    
-      }
-    </script>
 
 
 
-</head>
-<body>
 
-  <section class="h-100 bg-warning">
-    <form action="" name="registerform" method="post" onsubmit="return validateform()">
+ <body class="regbody">
+  <section class="h-100">
+    <form action="" name="registerform" method="POST" onsubmit="">
+      {% csrf_token %}
     <div class="container py-5 h-30">
       <div class="row d-flex justify-content-center align-items-center h-30">
         <div class="col">
-          <div class="card  mx-auto card-registration my-2 card w-75">
-            <div class="row g-0">
-              <div class="col-xl-6 d-none d-xl-block">
-                <img src="/static/assets/img/blank.jpg"
-                  alt="Sample photo" class="img-fluid mx-w-100 h-100"
-                  style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
-                  
-              </div>
-              <div class="col-sm-6">
+          <div class="card  mx-auto card-registration my-2 card w-50">
+            
+              
                 <div class="card-body p-md-8 text-black">
                   <h4 class="mb-5 text-uppercase text-center">register here!</h4>
                  
@@ -56,14 +23,33 @@
                   <div class="row">
                     <div class="col-md-6 mb-4">
                       <div class="form-outline">
-                        <input type="text" name="name" id="form3"  class="form-control form-control-sm " placeholder="First Name"/>
-                        <label class="form-label" for="form3"></label>
+                        <label class="form-label text-black" for="form3">First Name</label>
+                        <input type="text" name="regname1" id="form3"  class="form-control form-control-sm  reginput" placeholder="First Name"/>
                       </div>
                     </div>
                     <div class="col-md-6 mb-4">
                       <div class="form-outline">
-                        <input type="text"  name= "password" id="form4" class="form-control form-control-sm" placeholder="Last Name" />
-                        <label class="form-label" for="form3Example1n"></label>
+                        <label class="form-label text-black" for="form3Example1n">Last Name</label>
+                        <input type="text"  name= "regname2" id="form4" class="form-control form-control-sm reginput" placeholder="Last Name" />
+                       
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <label class="form-label text-black" for="username">User Name</label>
+                        <input type="text" name="regusername" id="username"  class="form-control form-control-sm reginput " placeholder="Username"/>
+                        
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline mb-2">
+                        <label class="form-label text-black" for="form10">Email</label>
+                        <input type="email" id="form10" name="regemail" class="form-control form-control-sm reginput" placeholder="Enter Mail" />
+                         
                       </div>
                     </div>
                   </div>
@@ -71,43 +57,48 @@
                   <div class="row">
                     <div class="col-md-6 mb-4">
                       <div class="form-outline">
-                        <input type="password"  name="password1" id="form5" class="form-control form-control-sm" placeholder="Enter Password"/>
-                        <label class="form-label" for="form5"></label>
+                        <label class="form-label text-black" for="form5">Password</label>
+                        <input type="password"  name="password1" id="form5" class="form-control form-control-sm reginput" placeholder="Enter Password"/>
+                        
                       </div>
                     </div>
                     <div class="col-md-6 mb-4">
                       <div class="form-outline">
-                        <input type="password" name="password2" id="form6" class="form-control form-control-sm" placeholder="Conform Password" />
-                        <label class="form-label" for="form6"></label>
+                        <label class="form-label text-black" for="form6">Confirm Password</label>
+                        <input type="password" name="password2" id="form6" class="form-control form-control-sm reginput" placeholder="Confirm Password" />
+                       
                       </div>
                     </div>
                   </div>
   
                   <div class="form-outline mb-2">
-                    <input type="text" id="form7" class="form-control form-control-sm" placeholder="Enter your address here" />
-                    <label class="form-label" for="form3Example8"></label>
+                    <label class="form-label text-black" for="form3Example8">Enter Address</label>
+                    <input type="text" name="regaddress" id="form7" class="form-control form-control-sm reginput" placeholder="Enter your address here" />
+                    
                   </div>
 
                   <div class="form-outline mb-2">
-                    <input type="text" id="form8" class="form-control form-control-sm" placeholder="Enter PIN" maxlength="6" />
-                    <label class="form-label" for="form8"></label>
+                    <label class="form-label text-black" for="form8">Enter PIN</label>
+                    <input type="text" name="regpin"  id="form8" class="form-control form-control-sm reginput" placeholder="Enter PIN" maxlength="6" />
+                    
                   </div>
 
-                  <div class="row">
-                    <div class="col-md-6 mb-4">
+                  <div class="row ">
+                    <div class="col-md-6 mb-4 mt-4">
+                      <label class="form-label text-black" for="form8">Select State</label>
   
-                      <select class="select">
-                        <option value="1">State</option>
+                      <select class="select ps-3 mb-0 w-50 h-100 reginput" name="regstate">
+                        <option class="text-light text-black" value="1">Select State</option>
                         <option value="2">Option 1</option>
                         <option value="3">Option 2</option>
                         <option value="4">Option 3</option>
                       </select>
   
                     </div>
-                    <div class="col-md-6 mb-4">
-  
-                      <select class="select">
-                        <option value="1">City</option>
+                    <div class="col-md-6 mb-4 mt-4">
+                      <label class="form-label text-black" for="form8">Select City</label>
+                      <select class="select  ps-3 mb-0 text-dark w-50 h-100 reginput" name="regcity">
+                        <option value="1" class="text-dark">Select city</option>
                         <option value="2">Option 1</option>
                         <option value="3">Option 2</option>
                         <option value="4">Option 3</option>
@@ -123,49 +114,144 @@
                     <h6 class="mb-0 me-4">Gender: </h6>
   
                     <div class="form-check form-check-inline mb-0 me-4">
-                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender"
-                        value="option1" />
-                      <label class="form-check-label" for="femaleGender">Female</label>
+                      <input class="form-check-input" type="radio" name="gender" id="femaleGender"
+                        value="female" />
+                      <label class="form-check-label text-black" for="femaleGender">Female</label>
                     </div>
   
                     <div class="form-check form-check-inline mb-0 me-4">
-                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender"
-                        value="option2" />
-                      <label class="form-check-label" for="maleGender">Male</label>
+                      <input class="form-check-input" type="radio" name="gender" id="maleGender"
+                        value="male" />
+                      <label class="form-check-label text-black" for="maleGender">Male</label>
                     </div>
   
                     <div class="form-check form-check-inline mb-0">
-                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="otherGender"
-                        value="option3" />
-                      <label class="form-check-label" for="otherGender">Other</label>
+                      <input class="form-check-input" type="radio" name="gender" id="otherGender"
+                        value="other" />
+                      <label class="form-check-label text-black" for="otherGender">Other</label>
                     </div>
   
                   </div>
   
-                  <div class="row">
-                    <div class=" col-md-6 mb-4">
-                  <div class="form-outline mb-4">
-                    <label class="form-label" for="date">DOB</label>
-                    <input type="date" id="date" class="form-control form-control-sm" />
-                   </div>
-                </div>
+                  
+    <div class="row">
+     <div class="col-md-8 mb-4 ">
+                    
+      <label class="form-label text-black" for="selectplan">Selected Plan</label>
+      <input type="text" name="" id="selectplan_value">
+      <input type="text" name="selectplan" hidden id="selectplan">
+     </div>
+     <div class="col-md-4 mb-4 ">
+        <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" id="plan_modal" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
 
-                
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">All plans</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          
+    <table class="table" id="table">
+      <thead>
+        <tr class="table-warning">
+          <th scope="col">#</th>
+          <th scope="col"> PLAN NAME</th>
+          <th scope="col">VALIDITY</th>
+          <th scope="col">AMOUNT</th>
+          <th scope="col">GENDER</th>
+          <th scope="col">ACTION</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for data in plans %}
+        <tr class="table-warning">
+          
+          <th scope="row">{{forloop.counter}}</th>
+          <input type="text" hidden value="{{data.id}}" name="" id="">
+          <td>{{data.plan_name}}</td>
+          <td>{{data.plan_validity}}</td>
+          <td>{{data.plan_amount}}</td>
+          <td>{{data.target_gender}}</td>
+          <td><button type="button" class="btn btn-primary action" id="action">Select</button></td>
+          
+          
+        </tr>
+      
+        {% endfor %}
+        <script>
+          $(document).ready(function(){
+            console.log("working 1")
+            $("#table:has(tr)").mouseover(function(e){
+              $(this).css('cursor', 'pointer')
+              $(this).css('border-color', 'red')
+              console.log("working 2")
+            })
+          });
+        </script>
+        
+      </tbody>
+    </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+ </div>
+
+<div class="row">
+  <div class="col-md-6 mb-4">
+    <label class="form-label text-black" for="">DOB</label>
+    <input type="date" name="regdob" id="date" class="form-control form-control-sm reginput" />
+  </div>
+  <div class="col-md-6 mb-4">
+    <label class="form-label text-black" for="form8">Blood Group</label>
+    <select class="select  ps-3 mb-0 text-dark w-75 h-50 reginput" name="bloodgroup">
+      <option value="option1" selected class="text-dark">A+ve</option>
+      <option value="option2">Option 1</option>
+      <option value="option3">Option 2</option>
+      <option value="option4">Option 3</option>
+    </select>
+    </div>
+</div>
+              
+  
+     <div class="form-outline mb-2">
+      <label class="form-label text-black" for="form9">Phone</label>
+      <input type="number" name="regphone" id="form9" class="form-control form-control-sm reginput" placeholder="Enter phone number" />
+        </div>
+      <div class="row">
+         <div class="col-md-6 mb-4">
+            <div class="form-outline">
+                <label class="form-label text-black" for="form3">Enter Height</label>
+                <input type="text" name="userheight" id=""  class="form-control form-control-sm reginput" placeholder="weight"/>
+            </div>
+         </div>
+         <div class="col-md-6 mb-4">
+             <div class="form-outline">
+               <label class="form-label text-black" for="form3Example1n">Enter Weight</label>
+               <input type="text"  name= "userweight" id="form4" class="form-control form-control-sm reginput" placeholder="height" />
+                       
+              </div>
+          </div>
+          </div>
+
+                  <small style="color: red;">{{msg}}</small>
+  
                   
   
-                  <div class="form-outline mb-2">
-                    <input type="number" id="form9" class="form-control form-control-sm" placeholder="Enter phone number" />
-                    <label class="form-label" for="form9"></label>
-                  </div>
-  
-                  <div class="form-outline mb-2">
-                    <input type="text" id="form10" class="form-control form-control-sm" placeholder="Enter Mail" />
-                    <label class="form-label" for="form10"></label>
-                  </div>
-  
                   <div class="d-flex justify-content-between pt-3">
-                    <button type="button" class="btn btn-light btn-sm">Reset all</button>
-                    <button type="button" class="btn btn-warning btn-sm ms-2">Submit form</button>
+                    <button type="reset" class="btn btn-light btn-sm">Reset all</button>
+                    <button type="submit" class="btn btn-warning btn-sm ms-2">Submit form</button>
                   </div>
   
                 </div>
@@ -176,8 +262,61 @@
         </div>
       </div>
     </div>
+    
   </form>
   </section>
+  </body>
+
   
-</body>
-</html>
+{% endblock %}
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+
+
+$(document).ready(function(){
+  $("form").submit(function(){
+      var name = $("#regname1").val();
+      var email = $("#regemail").val();
+      var password = $("#password1").val();
+      var cpassword = $("#cpassword2").val();
+      $(".error").remove();
+      
+      if (name == "") {
+          $("#regname1").after('<span class="error">This field is required</span>');
+          return false;
+      }
+      
+      if (email == "") {
+          $("#regemail").after('<span class="error">This field is required</span>');
+          return false;
+      } else {
+          var regEx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i;
+          var validEmail = regEx.test(email);
+          if (!validEmail) {
+              $("#regemail").after('<span class="error">Enter a valid email</span>');
+              return false;
+          }
+      }
+      
+      if (password == "") {
+          $("#password1").after('<span class="error">This field is required</span>');
+          return false;
+      } else {
+          if (password.length < 8) {
+              $("#password1").after('<span class="error">Password must be at least 8 characters long</span>');
+              return false;
+          }
+      }
+      
+      if (cpassword == "") {
+          $("#password2").after('<span class="error">This field is required</span>');
+          return false;
+      } else {
+          if (cpassword != password) {
+              $("#password2").after('<span class="error">Passwords do not match</span>');
+              return false;
+          }
+      }
+  });
+});
+</script>

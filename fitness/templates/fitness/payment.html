@@ -1,0 +1,63 @@
+{% extends 'fitness/base.html'%}
+{% block body %}
+
+
+
+
+<div class="container">
+  
+              
+                  
+
+    <div class="row">
+      <div class="mx-auto col-10 col-md-8 col-lg-6">
+          <form class="bg-light" role="form"  method="POST">
+          {% csrf_token %}
+          <h1 class="text-center bg-dark text-white">DO PAYMENT</h1>
+  
+                      
+
+
+          <div class="row ">
+            <div class="col-md-2">
+              <label for="pymt" class="text-dark" >PLAN</label>
+            </div>
+            <div class="col-md-10">
+             <select class=" form-control ps-3 mb-0 w-100 h-100">
+              <option selected value="Select Plan">Select Plan</option>
+              <option>option2</option>
+             </select>
+            </div>
+          </div>
+          <div class="row ">
+            <div class="col-md-2 ps-0 mt-3">
+              <label for="" class="text-dark">AMOUNT</label>
+            </div>
+            <div class="col-md-10 ps-0 mt-3">  
+              <input type="number" class="form-control w-100 h-100" name="" placeholder="">
+            </div>
+          </div>
+         
+
+          <div class="row mt-4 d-flex justify-content-center">
+          
+              <button type="submit" class="btn btn-danger btn-sm btn-block w-75 mb-2" value="submit">Make Payment</button>
+              </div>
+          
+          </form>
+                  
+              </div>
+       </div>
+          </div>
+      
+     
+
+   
+
+{% endblock %}
+         
+
+
+              
+           
+         
