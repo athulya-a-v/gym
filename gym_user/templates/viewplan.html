@@ -2,19 +2,16 @@
 {% load static %}
 {% block body %}
 
-<head>
-  <link href="{% static 'css/styles.css'%}" rel="stylesheet" />
-<link rel="stylesheet" href="{% static 'css/viewplan.css' %}">
-</head>
+
     <div class=" vh-100 attendance">
         <div class="container pt-5">
           <div class="mx-auto mt-5">
-           <h2 class="text-uppercase text-center fw-bold text-dark report_font pb-6 bg-warning">Membership Plan Details</h2>
+           <h2 class="text-uppercase text-center fw-bold text-light report_font pb-6 bg-dark">Membership Plan Details</h2>
 
       
     <table class="table">
         <thead>
-          <tr class="table-warning">
+          <tr class="table-light">
             <th scope="col">#</th>
             <th scope="col"> PLAN NAME</th>
             <th scope="col">DESCRIPTION</th>
@@ -25,7 +22,7 @@
         </thead>
         <tbody>
           {% for data in userplan%}
-          <tr class="table-warning">
+          <tr class="table-light">
             
             <th scope="row">{{forloop.counter}}</th>
             
@@ -33,7 +30,7 @@
             <td>{{data.plan_description}}</td>
             <td>{{data.plan_validity}}</td>
             <td>{{data.plan_amount}}</td>
-            <td><a class="btn btn-warning" href="{% url 'gym_user:viewworkout' data.id %}">WORKOUT SUMMARY</a></td>
+            <td><a class="btn btn-dark" href="{% url 'gym_user:workoutsummary' data.id %}">WORKOUT SUMMARY</a></td>
             
             
           </tr>

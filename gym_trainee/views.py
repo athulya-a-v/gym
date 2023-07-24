@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from gym_admin.models import CreatePassword
-from gym_trainee.models import TraineeRegister
+from gym_trainee.models import TraineeRegister, UserHealthStatus
+from fitness.models import Register
 
 # Create your views here.
 def traineehome(request):
@@ -22,3 +23,14 @@ def traineeform(request, id):
           return redirect('gym_trainee:traineehome')
           
      return render(request, 'traineeform.html', {"traineereg":traineereg})
+def uploadhealthstatus(request, id):
+    user_status = Register.objects.get(id=id)
+    if request.method == 'POST':
+     user_health_status = request.POST['healthstatus']
+     register = UserHealthStatus(user_healthstatus=user_health_status)
+     register.save()
+     print('saved')
+     return redirect('gym_trainee:traineehome')
+    return render(request, 'uploadhealthstatus.html', {"user_status":user_status})
+def uploaddiet(request):
+    return render(request,'uploaddiet.html')

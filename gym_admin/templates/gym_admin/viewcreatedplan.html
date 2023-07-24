@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="{% static 'css/vewplan.css'%}" rel="stylesheet" />
+  <link href="{% static 'css/styles.css'%}" rel="stylesheet" />
+</head>
+<body>
+  
+
+
+
+<div class=" vh-100 attendance">
+    <div class="container pt-5">
+        <h2 class="text-uppercase text-center fw-bold text-dark report_font pb-4">Membership Plan Details</h2>
+
+     
+<table class="table">
+    <thead>
+      <tr class="table-dark">
+        <th scope="col">#</th>
+        <th scope="col"> PLAN NAME</th>
+        <th scope="col">DESCRIPTION</th>
+        <th scope="col">VALIDITY</th>
+        <th scope="col">AMOUNT</th>
+        <th scope="col">ACTION</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+        {% for data in ad_viewplan%}
+      <tr class="table-dark">
+        
+        <th scope="row">{{forloop.counter}}</th>
+        
+        <td>{{data.plan_name}}</td>
+        <td>{{data.plan_description}}</td>
+        <td>{{data.plan_validity}}</td>
+        <td>{{data.plan_amount}}</td>
+        <td><a class="btn btn-warning" href="{% url 'gym_admin:viewallcreatedplans' data.id %}">ViewAll</a></td>
+
+        
+
+        
+        
+      </tr>
+      {% endfor%}
+      
+      
+    </tbody>
+  </table>
+  
+</body>
+</html>

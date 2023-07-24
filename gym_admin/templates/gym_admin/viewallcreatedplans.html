@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="{% static 'css/registration.css'%}" rel="stylesheet" />
+    <link href="{% static 'css/styles.css'%}" rel="stylesheet" />
+    
+</head>
+<body>
+    <form>
+        <div class="container bg-light">
+          <div class="pt-5 pb-4 text-center text-uppercase text-white  "><h2 class="bg-dark w-100 headersize">workout summary</h2></div>
+      
+          <div class="p-2">
+          
+            <div class="row">
+              <div class="col-md-4 p-0 d-flex align-items-center pb-1 ">
+              <label for="text1" class=" text-dark "> Membership Plan Name</label>
+            </div>
+            <div class="col-md-8 ps-0 pb-3">
+              <input type="text" class="form-control reginput" name="workplanname" id="id" value="{{view_createdplans.plan_name}}" >
+            </div>
+            </div>
+      
+          
+            <div class="row ">
+              <div class="col-md-4 p-0 d-flex align-items-center">
+                <label for="text2" class=" text-dark ">Program Duration</label>
+              </div>
+              <div class="col-md-8 ps-0 pb-3">
+                <input type="text" class="form-control reginput" name="programduration" id="id" value="{{view_createdplans.plan_description}}" >
+              </div>
+            </div>
+            <div class="row ">
+              <div class="col-md-4 p-0 d-flex align-items-center">
+                <label for="text3" class=" text-dark">Workout Type</label>
+              </div>
+              <div class="col-md-8 ps-0 pb-3">
+                <input type="text" class="form-control reginput" name="workouttype" id="id" value="{{view_createdplans.workout_type}}">
+              </div>
+            </div>
+            <div class="row ">
+              <div class="col-md-4 p-0 d-flex align-items-center">
+                <label for="text4" class=" text-dark">Days Per Week</label>
+              </div>
+              <div class="col-md-8 ps-0 pb-3">
+                <input type="text" class="form-control reginput" name="daysperweek" id="id" value="{{view_createdplans.days_per_week}}">
+              </div>
+            </div>
+            <div class="row ">
+              <div class="col-md-4 p-0 d-flex align-items-center">
+                <label for="text5" class=" text-dark">Time Per Workout</label>
+              </div>
+              <div class="col-md-8 ps-0 pb-3">
+                <input type="text" class="form-control reginput" name="timeperworkout" id="id" value="{{view_createdplans.time_per_workout}}">
+              </div>
+            </div>
+            <div class="row ">
+              <div class="col-md-4 p-0 d-flex align-items-center">
+                <label for="text2" class=" text-dark">Equipment Required</label>
+              </div>
+              <div class="col-md-8 ps-0 pb-3">
+                <input type="text" class="form-control reginput" name="Equipmentrequired" id="id" value="{{view_createdplans.equipment_required}}">
+              </div>
+            </div>
+            <div class="row ">
+              <div class="col-md-4 p-0 d-flex align-items-center">
+                <label for="text2" class=" text-dark">Target Gender</label>
+              </div>
+              <div class="col-md-8 ps-0 pb-3">
+                <input type="text" class="form-control reginput" name="targetgender" id="id" value="{{view_createdplans.target_gender}}">
+              </div>
+              
+      
+          </div>
+          
+        
+            </div>
+            
+            <div class="row justify-content-center">
+              <div class="col justify-content-center">
+                <button type="submit" class="btn btn-warning btn-sm">close</button>
+              </div>
+              
+            </div>
+      
+          </div>
+        </div>
+      </form>
+    
+</body>
+</html>

@@ -10,3 +10,7 @@ class TraineeRegister(models.Model):
     trainee_dob = models.DateField()
     register_phone=models.BigIntegerField()
 
+class UserHealthStatus(models.Model):
+    user_healthstatus = models.CharField(max_length=100, default="")
+    uploading_date = models.DateField()
+

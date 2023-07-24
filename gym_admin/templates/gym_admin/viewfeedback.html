@@ -1,0 +1,38 @@
+{% extends 'gym_admin/adminbase.html'%}
+{% block body %}
+
+<div class=" vh-100 attendance">
+    <div class="container pt-5">
+        <h2 class="text-uppercase text-center fw-bold text-white report_font pb-4">USER FEEDBACK</h2>
+
+     
+<table class="table">
+    <thead>
+      <tr class="table-dark">
+        <th scope="col">#</th>
+        <th scope="col"> USER NAME</th>
+        <th scope="col">EMAIL</th>
+        <th scope="col">FEEDBACK</th>
+      </tr>
+    </thead>
+    <tbody>
+       {% for data in v_feedback %}
+      <tr class="table-dark">
+        
+        <th scope="row">{{forloop.counter}}</th>
+        
+        <td>{{data.f_name}}</td>
+        <td>{{data.f_mail}}</td>
+        <td>{{data.f_feedback}}</td>
+        
+        
+        
+      </tr>
+      {% endfor %}
+     
+      
+      
+    </tbody>
+  </table>
+
+{% endblock %}

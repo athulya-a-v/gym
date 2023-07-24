@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="{% static 'css/registration.css'%}" rel="stylesheet" />
+    <link href="{% static 'css/styles.css'%}" rel="stylesheet" />
+
+</head>
+
+<body>
+    <form>
+        <div class="container bg-light">
+            <div class="pt-5 pb-4 text-center text-uppercase text-white  ">
+                <h2 class="bg-dark w-100 headersize">MEMBER DETAILS</h2>
+            </div>
+
+            <div class="p-2">
+
+                <div class="row">
+                    <div class="col-md-4 p-0 d-flex align-items-center pb-1 ">
+                        <label for="text1" class=" text-dark ">First Name</label>
+                    </div>
+                    <div class="col-md-8 ps-0 pb-3">
+                        <input type="text" class="form-control reginput" name="" id="id"
+                            value="{{user.register_fname}}">
+                    </div>
+                </div>
+
+
+                <div class="row ">
+                    <div class="col-md-4 p-0 d-flex align-items-center">
+                        <label for="text2" class=" text-dark ">LAST NAME</label>
+                    </div>
+                    <div class="col-md-8 ps-0 pb-3">
+                        <input type="text" class="form-control reginput" name="" id="id"
+                            value="{{user.register_lname}}">
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-md-4 p-0 d-flex align-items-center">
+                        <label for="text3" class=" text-dark">ADDRESS</label>
+                    </div>
+                    <div class="col-md-8 ps-0 pb-3">
+                        <input type="text" class="form-control reginput" name="" id="id"
+                            value="{{user.register_address}}">
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-md-4 p-0 d-flex align-items-center">
+                        <label for="text5" class=" text-dark">STATE</label>
+                    </div>
+                    <div class="col-md-8 ps-0 pb-3">
+                        <input type="text" class="form-control reginput" name="timeperworkout" id="id"
+                            value="{{user.register_state}}">
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-md-4 p-0 d-flex align-items-center">
+                        <label for="text5" class=" text-dark">CITY</label>
+                    </div>
+                    <div class="col-md-8 ps-0 pb-3">
+                        <input type="text" class="form-control reginput" name="timeperworkout" id="id"
+                            value="{{user.register_city}}">
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-md-4 p-0 d-flex align-items-center">
+                        <label for="text2" class=" text-dark">PIN CODE</label>
+                    </div>
+                    <div class="col-md-8 ps-0 pb-3">
+                        <input type="text" class="form-control reginput" name="" id="id" value="{{user.register_pin}}">
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-md-4 p-0 d-flex align-items-center">
+                        <label for="text2" class=" text-dark">GENDER</label>
+                    </div>
+                    <div class="col-md-8 ps-0 pb-3">
+                        <input type="text" class="form-control reginput" name="" id="id"
+                            value="{{user.register_gender}}">
+                    </div>
+
+
+                </div>
+                <div class="row ">
+                    <div class="col-md-4 p-0 d-flex align-items-center">
+                        <label for="text2" class=" text-dark">DOB</label>
+                    </div>
+                    <div class="col-md-8 ps-0 pb-3">
+                        <input type="text" class="form-control reginput" name="" id="id" value="{{user.register_dob}}">
+                    </div>
+
+
+                </div>
+                <div class="row ">
+                    <div class="col-md-4 p-0 d-flex align-items-center">
+                      <label for="text2" class=" text-dark">PHONE</label>
+                    </div>
+                    <div class="col-md-8 ps-0 pb-3">
+                      <input type="text" class="form-control reginput" name="" id="id" value="{{user.register_phone}}">
+                    </div>
+                    
+            
+                </div>
+                <div class="row ">
+                    <div class="col-md-4 p-0 d-flex align-items-center">
+                      <label for="text2" class=" text-dark">BLOOD GROUP</label>
+                    </div>
+                    <div class="col-md-8 ps-0 pb-3">
+                      <input type="text" class="form-control reginput" name="" id="id" value="{{user.blood_group}}">
+                    </div>
+                    
+            
+                </div>
+                <div class="row ">
+                    <div class="col-md-4 p-0 d-flex align-items-center">
+                      <label for="text2" class=" text-dark">HEIGHT</label>
+                    </div>
+                    <div class="col-md-8 ps-0 pb-3">
+                      <input type="text" class="form-control reginput" name="" id="id" value="{{user.user_height}}">
+                    </div>
+                    
+            
+                </div>
+                <div class="row ">
+                    <div class="col-md-4 p-0 d-flex align-items-center">
+                      <label for="text2" class=" text-dark">WEIGHT</label>
+                    </div>
+                    <div class="col-md-8 ps-0 pb-3">
+                      <input type="text" class="form-control reginput" name="" id="id" value="{{user.user_weight}}">
+                    </div>
+                    
+            
+                </div>
+                <div class="row ">
+                    <div class="col-md-4 p-0 d-flex align-items-center">
+                      <label for="text2" class=" text-dark">SELECTED PLAN</label>
+                    </div>
+                    <div class="col-md-8 ps-0 pb-3">
+                      <input type="text" class="form-control reginput" name="" id="id" value="{{user.user_weight}}">
+                    </div>
+                    
+            
+                </div>
+
+
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col justify-content-center">
+                    <button type="submit" class="btn btn-warning btn-sm">close</button>
+                </div>
+
+            </div>
+
+        </div>
+        </div>
+    </form>
+
+</body>
+
+</html>
+
+<!--  <div class="container">
+        <div class=" d-flex justify-content-center align-items-center ">
+
+
+            <form role="form" class="bg-light">
+                <div class="form-group">
+                    <h1 class=" text-dark text-center ">MEMBER DETAILS</h1>
+
+                    <div class="row">
+                        <div class="col text-center py-3">
+
+
+                            <label for="name">First Name</label>
+                        </div>
+                        <div class="col">
+
+                            <input type="text" class="form-control py-2 w-75" id="id" value="{{user.register_fname}}">
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col text-center py-3">
+
+
+                            <label for="name">Last Name</label>
+                        </div>
+                        <div class="col">
+
+                            <input type="text" class="form-control py-2 w-75" id="id" value="{{user.register_lname}}">
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col text-center py-3">
+
+
+                            <label for="name">Password</label>
+                        </div>
+                        <div class="col">
+
+                            <input type="text" class="form-control py-2 w-75" id="id">
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col text-center py-3">
+
+
+                            <label for="name">Address</label>
+                        </div>
+                        <div class="col">
+
+                            <input type="text" class="form-control py-2 w-75" id="id" value="{{user.register_address}}">
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col text-center py-3">
+
+
+                            <label for="name">PIN</label>
+                        </div>
+                        <div class="col">
+
+                            <input type="text" class="form-control py-2 w-75" id="id" value="{{user.register_pin}}">
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col text-center py-3">
+
+
+                            <label for="name">State</label>
+                        </div>
+                        <div class="col">
+
+                            <input type="text" class="form-control py-2 w-75" id="id" value="{{user.register_state}}">
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col text-center py-3">
+
+
+                            <label for="name">City</label>
+                        </div>
+                        <div class="col">
+
+                            <input type="text" class="form-control py-2 w-75" id="id" value="{{user.register_city}}">
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col text-center py-3">
+
+
+                            <label for="name">Gender</label>
+                        </div>
+                        <div class="col">
+
+                            <input type="text" class="form-control py-2 w-75" id="id" value="{{user.register_gender}}">
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col text-center py-3">
+
+
+                            <label for="name">DOB</label>
+                        </div>
+                        <div class="col">
+
+                            <input type="text" class="form-control py-2 w-75" id="id" value="{{user.register_dob}}">
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col text-center py-3">
+
+
+                            <label for="name">Phone</label>
+                        </div>
+                        <div class="col">
+
+                            <input type="text" class="form-control py-2 w-75" id="id" value="{{user.register_phone}}">
+                        </div>
+
+                    </div>
+</body>
+
+</html>

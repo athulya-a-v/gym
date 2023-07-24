@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="{% static 'css/styles.css'%}" rel="stylesheet" />
+    <link href="{% static 'css/registration.css'%}" rel="stylesheet" />
+</head>
+<body>
+   
+        <section class="h-100">
+          <form action="" name="registerform" method="POST" onsubmit="">
+            {% csrf_token %}
+          <div class="container py-5 h-30">
+            <div class="row d-flex justify-content-center align-items-center h-30">
+              <div class="col">
+                <div class="card  mx-auto card-registration my-2 card w-50">
+                  
+                    
+                      <div class="card-body p-md-8 text-black">
+                        <h4 class="mb-5 text-uppercase text-center">Upload Health Status</h4>
+                       
+        
+                        <div class="row">
+                          <div class="col-md-6 mb-4">
+                            <div class="form-outline">
+                              <label class="form-label text-black" for="form3">First Name</label>
+                              <input type="text" name="regname1" id="id"  class="form-control form-control-sm  reginput" value="{{user_status.register_fname}}" disabled/>
+                            </div>
+                          </div>
+                          <div class="col-md-6 mb-4">
+                            <div class="form-outline">
+                              <label class="form-label text-black" for="form3Example1n">Last Name</label>
+                              <input type="text"  name= "regname2" id="id" class="form-control form-control-sm reginput" value="{{user_status.register_lname}}" disabled />
+                             
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                              <div class="form-outline">
+                                <label class="form-label text-black" for="form3">Height</label>
+                                <input type="text" name="regname1" id="id"  class="form-control form-control-sm  reginput" value="{{user_status.user_height}}" disabled />
+                              </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                              <div class="form-outline">
+                                <label class="form-label text-black" for="form3Example1n">Weight</label>
+                                <input type="text"  name= "regname2" id="id" class="form-control form-control-sm reginput" value="{{user_status.user_weight}}" disabled/>
+                               
+                              </div>
+                            </div>
+                          </div>
+                       
+                          <div class="form-outline mb-2">
+                            <label class="form-label text-black" for="form3Example8">bloodGroup</label>
+                            <input type="text" name="regaddress" id="id" class="form-control form-control-sm reginput" value="{{user_status.blood_group}}" disabled/>
+                            
+                          </div>
+                          <div class="form-outline mb-2">
+                            <label class="form-label text-black" for="form3Example8">Date</label>
+                            <input type="date" name="healthstatus" id="form7" class="form-control form-control-sm reginput" placeholder="Enter health status" />
+                            
+                          </div>
+                          <div class="form-outline mb-2">
+                            <label class="form-label text-black" for="form3Example8">Status</label>
+                            <input type="text" name="healthstatus" id="form7" class="form-control form-control-sm reginput" placeholder="Enter health status" />
+                            
+                          </div>
+                          
+                          <div class="d-flex justify-content-between pt-3">
+                            <button type="reset" class="btn btn-light btn-sm">Reset all</button>
+                            <button type="submit" class="btn btn-warning btn-sm ms-2">Upload</button>
+                          </div>
+                      </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </form>
+        </section>
+    
+</body>
+</html>
+
+
+
+
+  

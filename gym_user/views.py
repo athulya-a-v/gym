@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from gym_admin.models import CreatePlan 
+from gym_admin.models import CreatePlan, AddMachineryDetails 
 from .models import EnterFeedback
 
 # Create your views here.
@@ -24,9 +24,11 @@ def viewdiet(request):
 def viewplan(request):
     userplan = CreatePlan.objects.all()
     return render(request,'viewplan.html/', {"userplan":userplan},)
-def machinery(request):
-    return render(request,'machinery.html/')
-def viewworkout(request, id):
+def viewmachinery(request):
+    machineries = AddMachineryDetails.objects.all()
+
+    return render(request,'viewmachinery.html/', {"machineries":machineries})
+def workoutsummary(request, id):
     planuser = CreatePlan.objects.get(id=id)
-    return render(request,'viewworkout.html/', {"planuser":planuser})
+    return render(request,'workoutsummary.html/', {"planuser":planuser})
 

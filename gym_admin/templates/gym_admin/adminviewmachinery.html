@@ -1,0 +1,47 @@
+{% extends 'gym_admin/adminbase.html'%}
+{% block body %}
+
+
+<div class=" vh-100 attendance">
+    <div class="container pt-5">
+        <h2 class="text-uppercase text-center fw-bold text-dark report_font pb-4">ALL MACHINERIES</h2>
+
+     
+<table class="table">
+    <thead>
+      <tr class="table-dark">
+        <th scope="col">#</th>
+        <th scope="col"> MACHINERY NAME</th>
+        <th scope="col">FUNCTION</th>
+        <th scope="col">IMAGE</th>
+        <th scope="col">ACTION</th>
+        
+        
+      </tr>
+    </thead>
+    <tbody>
+        {% for data in admin_view%}
+      <tr class="table-dark">
+        
+        <th scope="row">{{forloop.counter}}</th>
+        
+        <td>{{data.machinery_name}}</td>
+        <td>{{data.machinery_function}}</td>
+        <td> <img src="{{data.machinery_image.url}}" class="img-fluid rounded-start w-25 img-thumbnail" alt="..."></td>
+        <td> <button class="btn btn-light ">EDIT</button>
+            <button class="btn btn-light">DELETE</button>
+        </td>
+        
+
+        
+
+        
+        
+      </tr>
+      {% endfor%}
+      
+      
+    </tbody>
+  </table>
+  
+{% endblock %}

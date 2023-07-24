@@ -20,14 +20,14 @@ body{
     border-radius: 7px;
 }
 .image-container{
-    width: 90%;
+    width: 100%;
     margin: 0 auto 30px auto;
 }
 .image-container img{
     display: block;
     position: relative;
-    max-width: 100%;
-    max-height: 400px;
+    max-width: 70%;
+    max-height: 200px;
     margin: auto;
 }
 figcaption{
@@ -51,6 +51,7 @@ input[type="file"]{
     margin: auto;
     cursor: pointer;
 }
+
 h4{
     text-align: center;
 }
@@ -58,3 +59,15 @@ h4{
     align-items: center;
 
 }
+.shadow-textarea textarea.form-control::placeholder {
+    font-weight: 300;
+}
+.shadow-textarea textarea.form-control {
+    padding-left: 0.8rem;
+}
+.inputstyle{
+    outline: none;
+    border-radius: 10px;
+    border-color: #025bee;
+}
+

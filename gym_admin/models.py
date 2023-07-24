@@ -19,6 +19,11 @@ class CreatePassword(models.Model):
     trainee_mail = models.CharField(max_length=50, default="")
     trainne_password = models.CharField(max_length=8, default="")
 
+class AddMachineryDetails(models.Model):
+    machinery_name = models.CharField(max_length=50)
+    machinery_function = models.CharField(max_length=100)
+    machinery_image = models.ImageField(upload_to ='machineryimage')
+
 
 
 

@@ -7,7 +7,7 @@ urlpatterns = [
     path('viewclass', views.viewclass, name='viewclass'),
     path('viewdiet', views.viewdiet, name='viewdiet'),
     path('viewplan', views.viewplan, name='viewplan'),
-    path('machinery', views.machinery, name='machinery'),
-    path('viewworkout/<int:id>', views.viewworkout, name='viewworkout'),
+    path('viewmachinery', views.viewmachinery, name='viewmachinery'),
+    path('workoutsummary/<int:id>', views.workoutsummary, name='workoutsummary'),
     
 ]

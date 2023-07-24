@@ -1,0 +1,240 @@
+{% extends 'gym_admin/adminbase.html'%}
+{% block body %}
+ 
+    <section class="h-100">
+      <form action="" name="registerform" method="POST" onsubmit="">
+        {% csrf_token %}
+      <div class="container py-5 h-30 ">
+        <div class="row d-flex justify-content-center align-items-center h-30">
+          <div class="col">
+            <div class="card  mx-auto card-registration my-2 card w-50 bg-light">
+              
+                
+                  <div class="card-body p-md-8 text-black">
+                    <h4 class="mb-5 text-uppercase text-center ">MEMBERSHIP PLAN</h4>
+                   
+    
+                    <div class="form-outline mb-2">
+                      <label class="form-label text-black" for="form3Example8">Plan Name</label>
+                      <input type="text" name="planname" id="form7" class="form-control form-control-sm text-light bg-dark planinputstyle" placeholder="Enter membership plan " />
+                      
+                    </div>
+                    <div class="form-outline mb-2">
+                      <label class="form-label text-black" for="form3Example8">Plan Description</label>
+                      <input type="text" name="plandescription" id="form7" class="form-control form-control-sm text-light bg-dark  planinputstyle" placeholder="Enter membership plan " />
+                      
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                          <label class="form-label text-black" for="form3">Plan Validity</label>
+                          <input type="text" name="planvalidity" id="form3"  class="form-control form-control-sm  reginput" placeholder="plan validity"/>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                          <label class="form-label text-black" for="form3Example1n">Plan Amount</label>
+                          <input type="text"  name= "planamount" id="form4" class="form-control form-control-sm reginput" placeholder="plan validity" />
+                         
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4 mb-4">
+                        <div class="form-outline">
+                          <label class="form-label text-black" for="form3">Workout Type</label>
+                          <input type="text" name="workouttype" id="form3"  class="form-control form-control-sm  reginput" placeholder="workout type"/>
+                        </div>
+                      </div>
+                      <div class="col-md-4 mb-4">
+                        <div class="form-outline">
+                          <label class="form-label text-black" for="form3Example1n"> Days Per Week</label>
+                          <input type="text"  name= "daysperweek" id="form4" class="form-control form-control-sm reginput" placeholder="day per wokout" />
+                         
+                        </div>
+                      </div>
+                      <div class="col-md-4 mb-4">
+                        <div class="form-outline">
+                          <label class="form-label text-black" for="form3Example1n">Time</label>
+                          <input type="text"  name= "timeperworkout" id="form4" class="form-control form-control-sm reginput" placeholder="time per workout" />
+                         
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-outline mb-2">
+                      <label class="form-label text-black" for="form3Example8">Equipment Required</label>
+                      <input type="text" name="equipmentrequired" id="form7" class="form-control form-control-sm planinputstyle " placeholder="Equipment Required" />
+                      
+                    </div>
+
+                    <div class="form-outline mb-2">
+                      <label class="form-label text-black" for="form3Example8">Target Gender</label>
+                      <input type="text" name="targetgender" id="form7" class="form-control form-control-sm planinputstyle " placeholder="Target Gender" />
+                      
+                    </div>
+                    <div class="row d-flex justify-content-between">
+                      <div class="col-md-6 mb-4">
+                        
+                          
+                        <button type="reset" class="btn btn-light btn-lg btn-block ">Reset all</button>
+                        </div>
+                      
+                      <div class="col-md-6 mb-4">
+                        
+                        <button type="submit" class="btn btn-light btn-lg btn-block">submit</button>
+                         
+                        </div>
+                      
+                    </div>
+                   
+
+
+
+                  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </section>
+  {% endblock %}
+
+
+
+    
+          <!-- <form role="form" class="bg-light" method="POST">
+                {% csrf_token %}
+                <div class="container bg-light">
+                    <div class="p-2">
+
+                        <div class="row">
+                            <div class="col-md-4 p-0 d-flex align-items-center ">
+                            <label for="text1" class=" text-dark ">Plan name</label>
+                          </div>
+                          <div class="col-md-8 ps-0">
+                            <input type="text" class="form-control" name="planname">
+                          </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-4 p-0 d-flex align-items-center ">
+                            <label for="text1" class=" text-dark ">Description</label>
+                          </div>
+                          <div class="col-md-8 ps-0">
+                            <input type="text" class="form-control" name="plandescription">
+                          </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-4 p-0 d-flex align-items-center ">
+                            <label for="text1" class=" text-dark ">Validity</label>
+                          </div>
+                          <div class="col-md-8 ps-0">
+                            <input type="text" class="form-control" name="planvalidity">
+                          </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-md-4 p-0 d-flex align-items-center ">
+                            <label for="text1" class=" text-dark ">Amount</label>
+                          </div>
+                          <div class="col-md-8 ps-0">
+                            <input type="text" class="form-control" name="planamount">
+                          </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 p-0 d-flex align-items-center ">
+                        <label for="text1" class=" text-dark ">workout type</label>
+                      </div>
+                      <div class="col-md-8 ps-0">
+                        <input type="text" class="form-control" name="workouttype">
+                      </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-4 p-0 d-flex align-items-center ">
+                        <label for="text1" class=" text-dark ">Days per week</label>
+                      </div>
+                      <div class="col-md-8 ps-0">
+                        <input type="text" class="form-control" name="daysperweek">
+                      </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-4 p-0 d-flex align-items-center ">
+                        <label for="text1" class=" text-dark ">Time per workout</label>
+                      </div>
+                      <div class="col-md-8 ps-0">
+                        <input type="text" class="form-control" name="timeperworkout">
+                      </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-4 p-0 d-flex align-items-center ">
+                        <label for="text1" class=" text-dark ">Equipment required</label>
+                      </div>
+                      <div class="col-md-8 ps-0">
+                        <input type="text" class="form-control" name="equipmentrequired">
+                      </div>
+                      </div>
+
+                      <div class="row ">
+                        <div class="col-md-4 p-0 d-flex align-items-center">
+                          <label for="text2" class=" text-dark">Target gender</label>
+                        </div>
+                        <div class="col-md-8 ps-0">
+                          <div class="form-check form-check-inline  mb-0 me-2">
+                          <label class="form-check-label form-check-inline">Female</label>
+                          <input type="radio" class="form-check-input" name="targetgender">
+                      </div>
+                        <div class="form-check form-check-inline  mb-0 me-2">
+                        <label class="form-check-label form-check-inline">Male</label>
+                        <input type="radio" class="form-check-input" name="targetgender">
+                      </div>
+                
+                      <div class="form-check form-check-inline  mb-0 me-2">
+                        <label class="form-check-label form-check-inline">Both</label>
+                        <input type="radio" class="form-check-input" name="targetgender">
+                      </div>
+                
+                    </div>
+                    
+                  
+                      
+
+
+
+
+
+
+
+
+
+
+                
+                
+                    
+                
+                
+               
+                
+               
+            <div class="row ">
+                <div class="col">
+                    <button type="submit" class="btn btn-danger btn-sm" value="submit">ADD</button>
+                </div>
+            
+            
+                <div class="col">
+                    <button type="reset" class="btn btn-danger btn-sm " value="Reset">RESET</button>
+                </div>
+            </div>
+
+                
+                    </div>
+                
+            </form>
+        </div>
+    </div>
+
+</body></html>
