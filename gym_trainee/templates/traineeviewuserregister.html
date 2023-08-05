@@ -1,0 +1,44 @@
+{% extends 'trainee_base.html' %}
+{% block body %}
+
+<div class=" vh-100 ">
+    <div class="container pt-5">
+      <div class="card  mx-auto card-registration my-2 card w-auto">
+
+
+        <div class="card-body p-md-8 text-black bg-white">
+      <h2 class="text-uppercase text-center fw-bold text-dark report_font pb-4 " >MEMBER LIST</h2>
+  
+  
+      <table class="table table-white">
+        <thead>
+          <tr class="text-black">
+            <th scope="col">#</th>
+            <th scope="col" class="">MEMBER NAME</th>
+            <th scope="col">EMAIL</th>
+            <th scope="col">PHONE</th>
+            <th scope="col">ACTION</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for data in traineeviewuser %}
+          <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td>{{data.register_fname}} . {{data.register_lname}}</td>
+            <td>{{data.register_email}}</td>
+            <td>{{data.register_phone}}</td>
+            
+            <td><div class="pb-2"><a class="btn text-white " style="background-color: rgb(5, 5, 208);" href="{% url 'gym_trainee:uploadhealthstatus' data.id %}">Add HealthStatus</a></div>
+              <a class="btn text-white " style="background-color: rgb(5, 5, 208);" href="{% url 'gym_trainee:dietplan' data.id %}">Add diet-plan</a></td>
+  
+          </tr>
+          {% endfor %}
+  
+  
+        </tbody>
+      </table>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

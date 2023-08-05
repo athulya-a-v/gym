@@ -1,11 +1,116 @@
 {% extends 'gym_admin/adminbase.html' %}
 {% block body %}
-<div class="container">
+
+<section class="h-100 h-custom">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-8 col-xl-6  ">
+        <div class="card rounded-3 bg-white">
+          <!--<img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img3.webp"
+            class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
+            alt="Sample photo">-->
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2 text-wrap" style="border-radius: 10px;">Registration Info</h3>
+
+            <form class="px-md-2" method="POST">
+              {% csrf_token %}
+
+              
+
+              <div class="row">
+
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline ">
+                    <label for="" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="" name="tfname"  placeholder="firstname" />
+                  </div>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline ">
+                    <label for="" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="" name="tlname" placeholder="Lastname"/>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="form-outline mb-4">
+                <label class="form-label" for="">Email</label>
+                <input type="email" id="" class="form-control" placeholder=" enter email" name="temail"/>
+                
+              </div>
+              <div class="form-outline mb-4">
+                <label class="form-label" for="">UserName</label>
+                <input type="text" id="" class="form-control" placeholder=" enter username" name="tusername"/>
+                
+              </div>
+              <div class="row">
+
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline ">
+                    <label for="" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="" name="tpassword"style="border: 2px solid blue;" placeholder="password" />
+                  </div>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline ">
+                    <label for="" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" id="" name="" style="border: 2px solid blue;" placeholder="Confirm password"/>
+                  </div>
+                </div>
+                <small >{{msg}}</small>
+              </div>
+              <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+
+                <h6 class="mb-0 me-4">Gender: </h6>
+
+                <div class="form-check form-check-inline mb-0 me-4">
+                  <input class="form-check-input" type="radio" name="tgender" id="femaleGender" value="female" />
+                  <label class="form-check-label text-black" for="femaleGender">Female</label>
+                </div>
+
+                <div class="form-check form-check-inline mb-0 me-4">
+                  <input class="form-check-input" type="radio" name="tgender" id="maleGender" value="male" />
+                  <label class="form-check-label text-black" for="maleGender">Male</label>
+                </div>
+
+                <div class="form-check form-check-inline mb-0">
+                  <input class="form-check-input" type="radio" name="tgender" id="otherGender" value="other" />
+                  <label class="form-check-label text-black" for="otherGender">Other</label>
+                </div>
+              </div>
+              <div class="form-outline mb-4">
+                <label class="form-label" for="">Address</label>
+                <input type="text" id="" class="form-control" placeholder=" enter address" name="taddress"/>
+                
+              </div>
+              <div class="form-outline mb-4">
+                <label class="form-label" for="">phone</label>
+                <input type="number" id="" class="form-control" placeholder=" enter phone number" name="tphone"/>
+                
+              </div>
+
+             
+             
+              <button type="submit" class="btn btn-light btn-lg btn-block mb-1" >Submit</button>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--<div class="container">
   <div class="row">
     <div class="mx-auto col-10 col-md-8 col-lg-6">
-      <form class=" form12 bg-light h-auto" role="form" method="POST">
+      <form class=" form12 bg-white h-auto " role="form" method="POST">
         {% csrf_token %}
-        <div class="row w-100 bg-dark">
+        <div class="row w-100" style="background-color: #2e2759;">
           <div class="col-md-12">
           <h1 class="text-center  text-white">Trainee Registration</h1>
         </div>
@@ -51,18 +156,18 @@
          
         
 
-        <div class="row w-100">
-          <div class="col-md-6">
-            <button class="btn btn-danger" type="submit" >Create</button>
+        <div class="row w-100 d-flex justify-content-between pt-3">
+          <div class="col-md-6 d-flex justify-content-between">
+            <button class="btn btn-light btn-sm btn-block" type="submit" >Create</button>
 
           </div>
-          <div class="col-md-6">
-            <button class="btn btn-danger" type="reset">Reset</button>
+          <div class="col-md-6 d-flex justify-content-between pt-3">
+            <button class="btn btn-light btn-sm btn-block" type="reset">Reset</button>
           </div>
         </div>
 
       </form>
     </div>
   </div>
-</div> 
+</div> -->
 {% endblock %}

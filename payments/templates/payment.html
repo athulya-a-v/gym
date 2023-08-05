@@ -1,0 +1,47 @@
+{%extends 'fitness/base.html'%}
+{%block body%}
+<section class="">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card shadow-2-strong" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+  
+              <h3 class="mb-5">Make Payment</h3>
+  
+              <div class="form-outline mb-4">
+                <label class="form-label text-start" for="typeEmailX-2">Selected Plan</label>
+                <input type="email" id="typeEmailX-2" class="form-control form-control-lg" />
+                
+              </div>
+  
+              <div class="form-outline mb-4">
+                <label class="form-label text-start" for="typePasswordX-2">Amount</label>
+                <input type="password" id="typePasswordX-2" class="form-control form-control-lg" />
+                
+              </div>
+              <form action="{% url 'charge'%}" method="post">
+                {% csrf_token %}
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-Key="{{STRIPE_PUBLIC_KEY}}"
+                data-description="do your payment here!"
+                data-amount="">
+            </script>
+            </form>
+              <!-- Checkbox -->
+              
+              
+  
+             
+  
+              
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+{% endblock %}

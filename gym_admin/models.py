@@ -12,12 +12,18 @@ class CreatePlan(models.Model):
     equipment_required = models.CharField(max_length=50)
     target_gender = models.CharField(max_length=7)
 
-class CreatePassword(models.Model):
+class TraineeRegister(models.Model):
     trainee_firstname = models.CharField(max_length=50, default="")
     trainee_lastname = models.CharField(max_length=20, default="")
     trainee_username = models.CharField(max_length=20, default="")
     trainee_mail = models.CharField(max_length=50, default="")
     trainne_password = models.CharField(max_length=8, default="")
+    trainee_address = models.CharField(max_length=100, default="")
+    trainee_number = models.BigIntegerField()
+    trainee_gender = models.CharField(max_length=10, default="")
+
+
+    
 
 class AddMachineryDetails(models.Model):
     machinery_name = models.CharField(max_length=50)

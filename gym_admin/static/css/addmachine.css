@@ -9,8 +9,9 @@ body{
 }
 .container{
     background-color: #ffffff;
-    width: 60%;
-    min-width: 450px;
+    width:auto;
+    min-width: auto;
+    height: auto;
     position: absolute;
     transform: translate(-50%,-50%);
     top: 50%;
@@ -20,14 +21,14 @@ body{
     border-radius: 7px;
 }
 .image-container{
-    width: 100%;
+    width: 25%;
     margin: 0 auto 30px auto;
 }
 .image-container img{
     display: block;
     position: relative;
-    max-width: 70%;
-    max-height: 200px;
+    max-width: 25%;
+    max-height: 100px;
     margin: auto;
 }
 figcaption{
@@ -45,7 +46,8 @@ input[type="file"]{
     color: #ffffff;
     font-size: 18px;
     text-align: center;
-    width: 300px;
+    
+    
     padding: 18px 0;
     border-radius: 5px;
     margin: auto;

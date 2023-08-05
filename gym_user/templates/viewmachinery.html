@@ -1,4 +1,4 @@
-{% extends 'userbase.html'%}
+{% extends 'fitness/base.html'%}
 
 {% load static %}
 
@@ -10,11 +10,11 @@
         <header>OUR MACHINERIES</header>
     </div>
     {% for data in machineries %}
-    <div class="card mb-3 mx-auto text-dark bg-white " style="max-width: 700px; ">
+    <div class="card mb-3 mx-auto text-dark bg-white  w-100 h-100" style="border: none;">
         <div class="row g-0 boxoutline">
           <div class="col-md-4">
            
-            <img src="{{data.machinery_image.url}}" class="img-fluid rounded-start" alt="...">
+            <img src="{{data.machinery_image.url}}" class=" card-img-top img-fluid rounded-start" alt="...">
           </div>
           <div class="col-md-8">
             <div class="card-body">

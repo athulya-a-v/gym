@@ -9,6 +9,7 @@ from django.db import models
     #mach_image=models.ImageField(upload_to ='mechdetail')
 
 class Register(models.Model):
+    
     register_fname=models.CharField(max_length=100)
     register_lname=models.CharField(max_length=100)
     register_username=models.CharField(max_length=100)
@@ -26,6 +27,8 @@ class Register(models.Model):
     blood_group = models.CharField(max_length=20, default="")
     user_height = models.CharField(max_length=25, default="")
     user_weight = models.CharField(max_length=25, default="")
+    user_photo = models.ImageField(upload_to ='userphoto', default="")
+    time_stamp = models.DateTimeField(auto_now_add=True)
 
 
     

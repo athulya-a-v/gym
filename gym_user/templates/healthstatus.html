@@ -1,0 +1,108 @@
+{% extends 'userbase.html' %}
+{% block body%}
+<section class="h-100">
+  <form method="POST" class="">
+    {% csrf_token %}
+    <div class="container  pt-5 h-30">
+      <div class="row d-flex justify-content-center align-items-center h-30">
+        <div class="col">
+          <div class="card  mx-auto card-registration my-2 card w-100">
+
+
+            <div class="card-body p-md-8 text-black">
+              <h4 class="mb-5 text-uppercase text-center">Health Report</h4>
+              
+                <div class="row">
+                  <div class="col-sm-3">
+                <label class="form-label text-black" for="form9">Date:{{health_status.uploading_date}}</label>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="form-outline mb-2 pb-5">
+                <input type="text"  class="form-control form-control-sm  " style="border: none; outline: none;"
+                   />
+                    </div>
+                
+              </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-4 mb-4">
+                    <label class="form-label text-black pt-2" >Member name:   {{users_name.register_fname}}.{{users_name.register_lname}}</label>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="text" name="" value=" "
+                      class="form-control form-control-sm  " style="border: none; outline: none;" />
+                  </div>
+                  </div>
+                </div>
+                
+              <div class="row">
+                <div class="col-md-3 mb-4"> 
+                    <label class="form-label text-black pt-1" for="form3">Previous weight: {{users_name.user_weight}}</label>
+                </div>
+                <div class="col-md-3 mb-4">
+                  <div class="form-outline">
+                    <input type="text" name="regname1" id="firstname_id" class="form-control form-control-sm  "
+                       style="border-bottom: 2px;border: 0px; outline: none;" value=" "/>
+                </div>
+                  </div>
+                  <div class="col-md-3 mb-4"> 
+                    <label class="form-label text-black" for="form3">Current weight:</label>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                  <div class="form-outline">
+                    <input type="text" name="regname2" id="lastname_id" class="form-control form-control-sm" style="outline: none; border: none;" />
+                </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3 mb-4"> 
+                    <label class="form-label text-black" for="form3">Total Hours to work:</label>
+                </div>
+                <div class="col-md-3 mb-4">
+                  <div class="form-outline">
+                    <input type="text"  class="form-control form-control-sm  " style="border: 0px; outline: none;"/>
+                </div>
+                  </div>
+                  <div class="col-md-3 mb-4"> 
+                    <label class="form-label text-black" for="form3">hours worked:</label>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                  <div class="form-outline">
+                    <input type="text"  class="form-control form-control-sm " style="border: 0px; outline: none;"/>
+                </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3 mb-4"> 
+                    <label class="form-label text-black" for="">BloodGroup: {{users_name.blood_group}}</label>
+                </div>
+                <div class="col-md-3 mb-4">
+                  <div class="form-outline">
+                    <input type="text"  class="form-control form-control-sm " style="border: 0px; outline: none;"/>
+                </div>
+                </div>
+
+
+
+   <!-- <h2 class="display-5">Hello, {{users_name.register_fname}}</h2>-->
+    <p class="lead">Status: {{health_status.user_healthstatus}} uploaded on  {{health_status.uploading_date}} </p>
+    <hr class="my-4">
+    <p> </p>
+    <p class="lead">
+       <!--<a class="btn " href=""></a>-->
+    </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</section>
+
+
+{% endblock %}
+<!--<h3>{{health_status.user_healthstatus}}</h3>
+    <h3>{{health_status.uploading_date}}</h3>-->

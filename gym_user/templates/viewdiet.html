@@ -1,54 +1,150 @@
-<!DOCTYPE html>
-<html lang="en">
-    {% load static %}
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'css/viewplan.css' %}">
-    <link href="{% static 'css/styles.css'%}" rel="stylesheet" />
-</head>
-<body>
-    <div class=" vh-100 attendance">
-        <div class="container pt-5">
-            <h2 class="text-uppercase text-center fw-bold text-white report_font pb-4">WORKOUT ROUTINE</h2>
-
-         
-    <table class="table">
+{% extends 'userbase.html' %}
+{% block body%}
+<div class=" vh-100 nutritions">
+  <div class="container pt-md-5 ps-md-4 pe-md-4">
+      <h2 class="text-uppercase text-center fw-bold text-primary card_style report_font  pt-md-2 pb-md-2">
+          Scheduled Diet Plan
+      </h2>
+      <table class="table table-sm border-dark text-dark nutrition_style">
         <thead>
-          <tr class="table-warning">
-            <th scope="col">#</th>
-            <th scope="col">ROUTINE NAME</th>
-            <th scope="col">DAY1</th>
-            <th scope="col">DAY2</th>
-            <th scope="col">DAY3</th>
-            <th scope="col">DAY4</th>
-            <th scope="col">DAY5</th>
-            <th scope="col">DAY6</th>
-          </tr>
+            <tr>
+
+                <th scope="col">#</th>
+                <th scope="col">Foods to add in diet</th>
+                <th scope="col">Foods to avoid in diet</th>
+               
+
+
+            </tr>
         </thead>
         <tbody>
-        
-          <tr class="table-warning">
+           
+            <tr>
+                <td>1</td>
+                <td>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Catogories|</th>
+                                <th>Type</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                           
+                            <tr>
+                                <td>hh</td>
+                                <td>ii</td>
+                            </tr>
+                            
+
+                        </tbody>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Categories|</th>
+                                <th>Type</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                           
+                            <tr>
+                                <td>jjjj</td>
+                                <td>jjj</td>
+                            </tr>
+                            
+
+                        </tbody>
+                    </table>
+                </td>
+                
+                
+
+
+                
+
+            </tr>
             
-            <th scope="row"></th>
-            
-            <td>Routine1</td>
-            <td>aa</td>
-            <td>aa</td>
-            <td>aa</td>
-            <td>aa</td>
-            <td>aa</td>
-            <td>aa</td>
-            
-            
-          </tr>
-          
-          
         </tbody>
+    </table>
+    <h5 class="text-uppercase text-start fw-bold text-muted card_style report_font  pt-md-2 pb-md-2">Pre-workout and post-workout diet plan
+     
+  </h5>
+      <table class="table table-sm border-dark text-dark nutrition_style">
+          <thead>
+              <tr>
+
+                  <th scope="col">#</th>
+                  <th scope="col">Pre-workout food</th>
+                  <th scope="col">Post-workout food</th>
+                 
+
+
+              </tr>
+          </thead>
+          <tbody>
+             
+              <tr>
+                  <td>1</td>
+                  <td>
+                      <table>
+                          <thead>
+                              <tr>
+                                  <th>Items|</th>
+                                  <th>Quantity/day</th>
+
+
+                              </tr>
+                          </thead>
+                          <tbody>
+                             
+                              <tr>
+                                  <td>hh</td>
+                                  <td>ii</td>
+                              </tr>
+                              
+
+                          </tbody>
+                      </table>
+                  </td>
+                  <td>
+                      <table>
+                          <thead>
+                              <tr>
+                                  <th>Items|</th>
+                                  <th>Quantity/day</th>
+
+
+                              </tr>
+                          </thead>
+                          <tbody>
+                             
+                              <tr>
+                                  <td>jjjj</td>
+                                  <td>jjj</td>
+                              </tr>
+                              
+
+                          </tbody>
+                      </table>
+                  </td>
+                  
+                  
+
+
+                  
+
+              </tr>
+              
+          </tbody>
       </table>
-      
-    
-</body>
-</html>
+  </div>
+</div>
+
+    {% endblock %}

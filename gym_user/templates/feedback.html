@@ -1,16 +1,52 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'css/feed.css' %}">
-    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
-</head>
-<body>
-    <form role="form"  method="POST">
+{% extends 'userbase.html' %}
+{% block body %}
+
+
+
+<section class="vh-100" >
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-auto">
+            <div class="card h-auto w-50" style="border-radius: 0.25rem;">
+
+
+                <div class="card-body p-4 p-lg-5 text-black">
+
+                    <form>
+
+                        <div class="d-flex align-items-center mb-3 pb-1">
+                            
+                            <span class="h1 fw-bold mb-0 " >feedback</span>
+                        </div>
+
+                        <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">let us know!
+                        </h5>
+
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="form2Example17">feedback</label>
+                            <input type="email" id="form2Example17" class="form-control form-control-lg" placeholder="write something...."/>
+                            
+                        </div>
+
+                       
+
+                        <div class="pt-1 mb-4">
+                            <button class="btn btn-lg btn-block text-white" type="submit" style="background-color: rgb(19, 95, 246);">submit</button>
+                        </div>
+
+                       
+                       
+                       
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<!-- <form role="form"  method="POST">
         {% csrf_token %}
     <div class="container">
         
@@ -53,6 +89,5 @@
                 </div>
                 </div>
             </div>
-           
-</body>
-</html>
+    </form>-->
+{% endblock %}

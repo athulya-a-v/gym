@@ -1,8 +1,7 @@
 from django.shortcuts import render, redirect
 from fitness.models import *
-from . models import CreatePlan, CreatePassword, AddMachineryDetails
+from . models import CreatePlan, TraineeRegister, AddMachineryDetails
 from gym_user.models import EnterFeedback
-from gym_trainee.models import TraineeRegister
 from django.core.mail import send_mail
 from django.conf import settings
 
@@ -18,17 +17,21 @@ def traineeregistration(request):
      t_username = request.POST['tusername']
      t_password = request.POST['tpassword']
      t_mail = request.POST['temail']
-     user_exist = CreatePassword.objects.filter(trainne_password = t_password)
-     username_exist = CreatePassword.objects.filter(trainee_username = t_username)
-     email_exist = CreatePassword.objects.filter(trainee_mail= t_mail)
+     t_gender =request.POST['tgender']
+     t_address = request.POST['taddress']
+     t_phone = request.POST['tphone']
+     user_exist = TraineeRegister.objects.filter(trainne_password = t_password)
+     username_exist = TraineeRegister.objects.filter(trainee_username = t_username)
+     email_exist = TraineeRegister.objects.filter(trainee_mail= t_mail)
      if user_exist:
          msg = 'password already exist'
      elif username_exist:
          msg = 'username already exist'
      elif email_exist:
          msg = 'email already exist'
+         
      else:
-         register= CreatePassword(trainee_firstname=t_fname, trainee_lastname=t_lname, trainne_password=t_password, trainee_username=t_username, trainee_mail=t_mail)
+         register= TraineeRegister(trainee_firstname=t_fname, trainee_lastname=t_lname, trainne_password=t_password, trainee_username=t_username, trainee_mail=t_mail, trainee_gender=t_gender, trainee_address= t_address, trainee_number=t_phone)
          subject = "Fitness Club Trainee Registration"
          message = f"Hi {t_fname}, \n\n your Fitness Club login credentials is, \n\nUsername : {t_username}, \n\npassword : {t_password}"
          email_from = settings.EMAIL_HOST_USER
@@ -40,7 +43,7 @@ def traineeregistration(request):
          msg = "Trainee Registration Successfull"
          return render(request,"gym_admin/traineeregistration.html", {"msg":msg})
 
-    return render(request,'gym_admin/traineeregistration.html/')
+    return render(request,'gym_admin/traineeregistration.html/',{"msg":msg})
 
 def plann(request):
     msg = ''
@@ -70,7 +73,7 @@ def plann(request):
 def viewalluserregistration(request, id):
     user = Register.objects.get(id=id)
 
-    return render(request,'viewalluserregistration.html/',{"user":user})
+    return render(request,'gym_admin/viewalluserregistration.html/',{"user":user})
 def viewregister(request):
 
     query = Register.objects.all()
@@ -80,7 +83,7 @@ def viewregister(request):
 def viewcreatedplan(request):
     ad_viewplan = CreatePlan.objects.all()
 
-    return render(request,'viewcreatedplan.html/', {"ad_viewplan": ad_viewplan})
+    return render(request,'gym_admin/viewcreatedplan.html/', {"ad_viewplan": ad_viewplan})
 def addclass(request):
     return render(request,'addclass.html/')
 def addworkoutsummary(request):
@@ -110,8 +113,8 @@ def viewfeedback(request):
     v_feedback = EnterFeedback.objects.all()
     return render(request,'gym_admin/viewfeedback.html', {"v_feedback":v_feedback})
 def viewtrainee(request):
-    traineeview = CreatePassword.objects.all()
-    return render(request,'viewtrainee.html/', {'traineeview':traineeview})
+    traineeview = TraineeRegister.objects.all()
+    return render(request,'gym_admin/viewtrainee.html/', {'traineeview':traineeview})
 def traineeviewall(request):
     return render(request,'traineeviewall.html/')
 def addhealthstatus(request):

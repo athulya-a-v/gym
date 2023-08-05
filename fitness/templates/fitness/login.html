@@ -1,10 +1,100 @@
 {% extends 'fitness/base.html' %}
+{% load static %}
 {% block body %}
-<body class="logbody">
-<div class="container">
+<!-- Section: Design Block -->
+<section class=" text-center text-lg-start">
+  <style>
+    .rounded-t-5 {
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+    }
+
+    @media (min-width: 992px) {
+      .rounded-tr-lg-0 {
+        border-top-right-radius: 0;
+      }
+
+      .rounded-bl-lg-5 {
+        border-bottom-left-radius: 0.5rem;
+      }
+    }
+  </style>
+  <div class="card mb-1 w-50 h-25 mx-auto my-auto pt-3  " style="outline: none; border: none;">
+    <div class="row g-0 d-flex align-items-center">
+      <h4 class="text-center text-gray">Have an account?</h4>
+      <h1 class="text-center">LOGIN</h1>
+    </div>
+    <div class="row g-0 d-flex align-items-center ">
+
+      <div class="col-lg-4 d-none d-lg-flex">
+       
+        <img src="{%static 'assets/img/loginimage.png'%}" alt="Trendy Pants and Shoes"
+          class="w-100 rounded-t-5 rounded-tr-lg-0 rounded-bl-lg-5" />
+      </div>
+      <div class="col-lg-8  my-0">
+        <div class="card-body py-5 px-md-5">
+          
+              <form method="POST">
+                {% csrf_token %}
+                <div class="form-outline my-0">
+                  <label class="form-label" for="form2Example1">UserType</label>
+                  <select class=" form-control select  ps-3 mb-0" value="" name="usertype">
+                    <option class="text-dark" selected value="usertype">select user</option>
+                    <option class="text-dark" value="admin">Admin</option>
+                    <option class="text-dark" value="user">User</option>
+                    <option class="text-dark" value="user">Trainee</option>
+                  </select>
+
+                </div>
+
+                <div class="form-outline mb-0">
+                  <label class="form-label" for="form2Example1">User Name</label>
+                  <input type="text" id="form2Example1" class="form-control" name="login_name" />
+
+                </div>
+
+                <!-- Password input -->
+                <div class="form-outline mb-0">
+                  <label class="form-label" for="form2Example2">Password</label>
+                  <input type="password" id="form2Example2" class="form-control" name="login_userpassword" />
+
+                </div>
+
+                <!-- 2 column grid layout for inline styling -->
+                <div class="row mb-1">
+                  <div class="col d-flex justify-content-center">
+                    <!-- Checkbox -->
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+                      <label class="form-check-label" for="form2Example31"> Remember me </label>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <!-- Simple link -->
+                    <a href="#!">Forgot password?</a>
+                  </div>
+                </div>
+
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary btn-block mb-2">Sign in</button>
+
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Section: Design Block -->
+<!-- Section: Design Block -->
+
+<!--<div class="container pt-5">
     <div class=" d-flex justify-content-center align-items-center">
 
-        <form class="align item-center" method="POST">
+        <form class="align item-center pt-5" method="POST" style="background-color:#2e2759;">
             {% csrf_token %}
             <div class="top-header">
                 <span class="logspan"> Have an account?</span>
@@ -14,11 +104,11 @@
             <div class="row mb-3">
                 <div class="col-md-12">
                     <div class="input-field">
-<!-- 
+
                         <label for="name">usertype</label>
                     </div>
                     <div class=""> -->
-                            <select class=" logselect select  ps-3 mb-0" value="" name="usertype">
+<!--  <select class=" logselect select  ps-3 mb-0" value="" name="usertype">
                                 <option class="text-dark" selected value="usertype">User Type</option>
                                 <option class="text-dark" value="admin">Admin</option>
                                 <option class="text-dark" value="user">User</option>
@@ -68,6 +158,6 @@
         </form>
     </div>
 </div>
-</body>
+</body>-->
 
 {% endblock %}

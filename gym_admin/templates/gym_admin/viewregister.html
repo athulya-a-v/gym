@@ -1,37 +1,44 @@
 {% extends 'gym_admin/adminbase.html'%}
 {% block body %}
-  
+
 
 <div class=" vh-100 attendance">
   <div class="container pt-5">
-    <h2 class="text-uppercase text-center fw-bold text-light report_font pb-4 bg-dark">MEMBER LIST</h2>
+    <div class="card  mx-auto card-registration my-2 card w-auto">
 
 
-    <table class="table table-light">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">First Name</th>
-          <th scope="col">Last Name</th>
-          <th scope="col">Email</th>
-          <th scope="col">Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for data in query %}
-        <tr>
-          <th scope="row">{{forloop.counter}}</th>
-          <td>{{data.register_fname}}</td>
-          <td>{{data.register_lname}}</td>
-          <td>{{data.register_email}}</td>
-          <td><a class="btn btn-primary" href="{% url 'gym_admin:viewalluserregistration' data.id %}">ViewAll</a></td>
-
-        </tr>
-        {% endfor %}
+      <div class="card-body p-md-8 text-black bg-white">
+        <h2 class="text-uppercase text-center fw-bold text-dark report_font pb-4 ">MEMBER LIST</h2>
 
 
-      </tbody>
-    </table>
+        <table class="table table-border-dark">
+          <thead>
+            <tr class="">
+              <th scope="col">#</th>
+              <th scope="col">First Name</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for data in query %}
+            <tr>
+              <th scope="row">{{forloop.counter}}</th>
+              <td>{{data.register_fname}}</td>
+              <td>{{data.register_lname}}</td>
+              <td>{{data.register_email}}</td>
+              <td><a class="btn btn-primary" href="{% url 'gym_admin:viewalluserregistration' data.id %}">ViewAll</a>
+              </td>
+
+            </tr>
+            {% endfor %}
+
+
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </div>
 {% endblock %}

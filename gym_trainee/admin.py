@@ -1,6 +1,8 @@
 from django.contrib import admin
-from .models import TraineeRegister, UserHealthStatus
+from .models import  UserHealthStatus, UserAttendance, UploadRoutine
 
 # Register your models here.
-admin.site.register(TraineeRegister)
+
 admin.site.register(UserHealthStatus)
+admin.site.register(UserAttendance)
+admin.site.register(UploadRoutine)

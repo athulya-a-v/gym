@@ -17,24 +17,34 @@ def login(request):
           log_username=request.POST['login_name']
           log_password=request.POST['login_userpassword']
           log_usertype=request.POST['usertype']
-
-          user_exist = Register.objects.filter(register_email=log_username, register_password=log_password ).exists()
+          if '@' in log_username:  
+               user_exist = Register.objects.filter(register_email=log_username, register_password=log_password ).exists()
+          else:
+               user_exist = Register.objects.filter(register_username=log_username, register_password=log_password ).exists()
+               
 
           if user_exist:
-              user_detail = Register.objects.get(register_email=log_username, register_password=log_password)
-              request.session['user_id'] = user_detail.id
-              return redirect("gym_user:userhome")
+               if '@' in log_username: 
+                    user_detail = Register.objects.get(register_email=log_username, register_password=log_password)
+               else:
+                    user_detail = Register.objects.get(register_username=log_username, register_password=log_password)
+
+               request.session['user_id'] = user_detail.id
+               print("working 1")
+               return redirect("gym_user:userhome")
           else:
+              print("wroking 2")
               msg = 'invalid email or password'
-              return render(request, 'fitness/login.html', {'err_msg': msg,})
+              return render(request, 'fitness/login.html', {'msg': msg,})
 
 
 
-     return render(request, 'fitness/login.html', {'err_msg': msg, })
+     return render(request, 'fitness/login.html', {'msg': msg, })
 
 
 def register(request):
      plans = CreatePlan.objects.all()
+     
      msg = ''
      if request.method == 'POST':
           reg_firstname = request.POST['regname1']
@@ -53,6 +63,9 @@ def register(request):
           user_bloodgroup = request.POST['bloodgroup']
           u_height = request.POST['userheight']
           u_weight = request.POST['userweight']
+          user_image = request.FILES['userimage']
+          user_image=user_image
+          
 
           username_exist = Register.objects.filter(register_username=reg_username)
           email_exist = Register.objects.filter(register_email=reg_email)
@@ -63,12 +76,14 @@ def register(request):
                msg = "Username already exist"
           elif email_exist:
                msg = "Email already exist"
+         
           else:
-               register = Register(register_fname=reg_firstname, register_lname=reg_secondname,register_username=reg_username,register_email=reg_email, register_password=reg_password, register_address=reg_address,
-                         register_pin=reg_pin, register_state=reg_state, register_city=reg_city, register_gender=reg_gender, register_dob=reg_dob, register_phone=reg_phone, user_type=user_type, blood_group=user_bloodgroup, user_height=u_height, user_weight=u_weight)
+               register = Register( register_fname=reg_firstname, register_lname=reg_secondname,register_username=reg_username,register_email=reg_email, register_password=reg_password, register_address=reg_address,
+                         register_pin=reg_pin, register_state=reg_state, register_city=reg_city, register_gender=reg_gender, register_dob=reg_dob, register_phone=reg_phone, user_type=user_type, blood_group=user_bloodgroup, user_height=u_height, user_weight=u_weight, user_photo=user_image)
                register.save()
                print("saved")
                return redirect('fitness:login')
-     return render(request, 'fitness/register.html', {'msg': msg, 'plans':plans,})
+     return render(request, 'fitness/register.html', {'msg': msg, 'plans':plans, })
+
 def payment(request):
     return render(request, 'fitness/payment.html')

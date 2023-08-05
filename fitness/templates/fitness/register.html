@@ -1,322 +1,491 @@
 {% extends 'fitness/base.html' %}
 {% block body %}
 
-    
 
 
 
 
- <body class="regbody">
-  <section class="h-100">
-    <form action="" name="registerform" method="POST" onsubmit="">
-      {% csrf_token %}
-    <div class="container py-5 h-30">
+
+
+<section class="h-100">
+  <form action="" name="registerform" method="POST" onsubmit="" id="registerform" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="container  pt-5 h-30">
       <div class="row d-flex justify-content-center align-items-center h-30">
         <div class="col">
           <div class="card  mx-auto card-registration my-2 card w-50">
-            
-              
-                <div class="card-body p-md-8 text-black">
-                  <h4 class="mb-5 text-uppercase text-center">register here!</h4>
-                 
-  
-                  <div class="row">
-                    <div class="col-md-6 mb-4">
-                      <div class="form-outline">
-                        <label class="form-label text-black" for="form3">First Name</label>
-                        <input type="text" name="regname1" id="form3"  class="form-control form-control-sm  reginput" placeholder="First Name"/>
-                      </div>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                      <div class="form-outline">
-                        <label class="form-label text-black" for="form3Example1n">Last Name</label>
-                        <input type="text"  name= "regname2" id="form4" class="form-control form-control-sm reginput" placeholder="Last Name" />
-                       
-                      </div>
-                    </div>
+
+
+            <div class="card-body p-md-8 text-black">
+              <h4 class="mb-5 text-uppercase text-center">register here!</h4>
+
+
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <label class="form-label text-black" for="form3">First Name</label>
+                    <input type="text" name="regname1" id="firstname_id" class="form-control form-control-sm  reginput"
+                      placeholder="First Name" />
+                      <p id="nameError" style="color: red;"></p><br>
                   </div>
-
-
-                  <div class="row">
-                    <div class="col-md-6 mb-4">
-                      <div class="form-outline">
-                        <label class="form-label text-black" for="username">User Name</label>
-                        <input type="text" name="regusername" id="username"  class="form-control form-control-sm reginput " placeholder="Username"/>
-                        
-                      </div>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                      <div class="form-outline mb-2">
-                        <label class="form-label text-black" for="form10">Email</label>
-                        <input type="email" id="form10" name="regemail" class="form-control form-control-sm reginput" placeholder="Enter Mail" />
-                         
-                      </div>
-                    </div>
-                  </div>
-  
-                  <div class="row">
-                    <div class="col-md-6 mb-4">
-                      <div class="form-outline">
-                        <label class="form-label text-black" for="form5">Password</label>
-                        <input type="password"  name="password1" id="form5" class="form-control form-control-sm reginput" placeholder="Enter Password"/>
-                        
-                      </div>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                      <div class="form-outline">
-                        <label class="form-label text-black" for="form6">Confirm Password</label>
-                        <input type="password" name="password2" id="form6" class="form-control form-control-sm reginput" placeholder="Confirm Password" />
-                       
-                      </div>
-                    </div>
-                  </div>
-  
-                  <div class="form-outline mb-2">
-                    <label class="form-label text-black" for="form3Example8">Enter Address</label>
-                    <input type="text" name="regaddress" id="form7" class="form-control form-control-sm reginput" placeholder="Enter your address here" />
-                    
-                  </div>
-
-                  <div class="form-outline mb-2">
-                    <label class="form-label text-black" for="form8">Enter PIN</label>
-                    <input type="text" name="regpin"  id="form8" class="form-control form-control-sm reginput" placeholder="Enter PIN" maxlength="6" />
-                    
-                  </div>
-
-                  <div class="row ">
-                    <div class="col-md-6 mb-4 mt-4">
-                      <label class="form-label text-black" for="form8">Select State</label>
-  
-                      <select class="select ps-3 mb-0 w-50 h-100 reginput" name="regstate">
-                        <option class="text-light text-black" value="1">Select State</option>
-                        <option value="2">Option 1</option>
-                        <option value="3">Option 2</option>
-                        <option value="4">Option 3</option>
-                      </select>
-  
-                    </div>
-                    <div class="col-md-6 mb-4 mt-4">
-                      <label class="form-label text-black" for="form8">Select City</label>
-                      <select class="select  ps-3 mb-0 text-dark w-50 h-100 reginput" name="regcity">
-                        <option value="1" class="text-dark">Select city</option>
-                        <option value="2">Option 1</option>
-                        <option value="3">Option 2</option>
-                        <option value="4">Option 3</option>
-                      </select>
-  
-                    </div>
-                  </div>
-  
-
-  
-                  <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
-  
-                    <h6 class="mb-0 me-4">Gender: </h6>
-  
-                    <div class="form-check form-check-inline mb-0 me-4">
-                      <input class="form-check-input" type="radio" name="gender" id="femaleGender"
-                        value="female" />
-                      <label class="form-check-label text-black" for="femaleGender">Female</label>
-                    </div>
-  
-                    <div class="form-check form-check-inline mb-0 me-4">
-                      <input class="form-check-input" type="radio" name="gender" id="maleGender"
-                        value="male" />
-                      <label class="form-check-label text-black" for="maleGender">Male</label>
-                    </div>
-  
-                    <div class="form-check form-check-inline mb-0">
-                      <input class="form-check-input" type="radio" name="gender" id="otherGender"
-                        value="other" />
-                      <label class="form-check-label text-black" for="otherGender">Other</label>
-                    </div>
-  
-                  </div>
-  
-                  
-    <div class="row">
-     <div class="col-md-8 mb-4 ">
-                    
-      <label class="form-label text-black" for="selectplan">Selected Plan</label>
-      <input type="text" name="" id="selectplan_value">
-      <input type="text" name="selectplan" hidden id="selectplan">
-     </div>
-     <div class="col-md-4 mb-4 ">
-        <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" id="plan_modal" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  SELECT PLAN
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">All plans</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-          
-    <table class="table" id="table">
-      <thead>
-        <tr class="table-warning">
-          <th scope="col">#</th>
-          <th scope="col"> PLAN NAME</th>
-          <th scope="col">VALIDITY</th>
-          <th scope="col">AMOUNT</th>
-          <th scope="col">GENDER</th>
-          <th scope="col">ACTION</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for data in plans %}
-        <tr class="table-warning">
-          
-          <th scope="row">{{forloop.counter}}</th>
-          <input type="text" hidden value="{{data.id}}" name="" id="">
-          <td>{{data.plan_name}}</td>
-          <td>{{data.plan_validity}}</td>
-          <td>{{data.plan_amount}}</td>
-          <td>{{data.target_gender}}</td>
-          <td><button type="button" class="btn btn-primary action" id="action">Select</button></td>
-          
-          
-        </tr>
-      
-        {% endfor %}
-        <script>
-          $(document).ready(function(){
-            console.log("working 1")
-            $("#table:has(tr)").mouseover(function(e){
-              $(this).css('cursor', 'pointer')
-              $(this).css('border-color', 'red')
-              console.log("working 2")
-            })
-          });
-        </script>
-        
-      </tbody>
-    </table>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-</div>
- </div>
-
-<div class="row">
-  <div class="col-md-6 mb-4">
-    <label class="form-label text-black" for="">DOB</label>
-    <input type="date" name="regdob" id="date" class="form-control form-control-sm reginput" />
-  </div>
-  <div class="col-md-6 mb-4">
-    <label class="form-label text-black" for="form8">Blood Group</label>
-    <select class="select  ps-3 mb-0 text-dark w-75 h-50 reginput" name="bloodgroup">
-      <option value="option1" selected class="text-dark">A+ve</option>
-      <option value="option2">Option 1</option>
-      <option value="option3">Option 2</option>
-      <option value="option4">Option 3</option>
-    </select>
-    </div>
-</div>
-              
-  
-     <div class="form-outline mb-2">
-      <label class="form-label text-black" for="form9">Phone</label>
-      <input type="number" name="regphone" id="form9" class="form-control form-control-sm reginput" placeholder="Enter phone number" />
-        </div>
-      <div class="row">
-         <div class="col-md-6 mb-4">
-            <div class="form-outline">
-                <label class="form-label text-black" for="form3">Enter Height</label>
-                <input type="text" name="userheight" id=""  class="form-control form-control-sm reginput" placeholder="weight"/>
-            </div>
-         </div>
-         <div class="col-md-6 mb-4">
-             <div class="form-outline">
-               <label class="form-label text-black" for="form3Example1n">Enter Weight</label>
-               <input type="text"  name= "userweight" id="form4" class="form-control form-control-sm reginput" placeholder="height" />
-                       
-              </div>
-          </div>
-          </div>
-
-                  <small style="color: red;">{{msg}}</small>
-  
-                  
-  
-                  <div class="d-flex justify-content-between pt-3">
-                    <button type="reset" class="btn btn-light btn-sm">Reset all</button>
-                    <button type="submit" class="btn btn-warning btn-sm ms-2">Submit form</button>
-                  </div>
-  
                 </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <label class="form-label text-black" for="form3Example1n">Last Name</label>
+                    <input type="text" name="regname2" id="lastname_id" class="form-control form-control-sm reginput"
+                      placeholder="Last Name" />
+                    <span class="text-danger error_msg"></span>
+
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <label class="form-label text-black" for="username">User Name</label>
+                    <input type="text" name="regusername" id="username_id"
+                      class="form-control form-control-sm reginput " placeholder="Username" />
+                    <span class="text-danger error_msg"></span>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline mb-2">
+                    <label class="form-label text-black" for="form10">Email</label>
+                    <input type="email" id="email_id" name="regemail" class="form-control form-control-sm reginput"
+                      placeholder="Enter Mail" />
+                      <p id="emailError" style="color: red;"></p><br>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <label class="form-label text-black" for="form5">Password</label>
+                    <input type="password" name="password1" id="password1_id"
+                      class="form-control form-control-sm reginput" placeholder="Enter Password" />
+                      <p id="passwordError" style="color: red;"></p><br>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <label class="form-label text-black" for="form6">Confirm Password</label>
+                    <input type="password" name="password2" id="password2_id"
+                      class="form-control form-control-sm reginput" placeholder="Confirm Password" />
+                      <p id="confirmPasswordError" style="color: red;"></p><br>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-outline mb-2">
+                <label class="form-label text-black" for="form3Example8">Enter Address</label>
+                <input type="text" name="regaddress" id="address_id" class="form-control form-control-sm reginput"
+                  placeholder="Enter your address here" />
+                <span class="text-danger error_msg"></span>
+              </div>
+
+              <div class="form-outline mb-2">
+                <label class="form-label text-black" for="form8">Enter PIN</label>
+                <input type="text" name="regpin" id="pincode_id" class="form-control form-control-sm reginput"
+                  placeholder="Enter PIN" maxlength="6" />
+                <span class="text-danger error_msg"></span>
+              </div>
+
+              <div class="row ">
+                <div class="col-md-6 mb-4 mt-4">
+                  <label class="form-label text-black" for="form8">Select State</label>
+
+                  <select class="select ps-3 mb-0 w-50 h-100 reginput" name="regstate" id="state_id">
+                    <option class="text-light text-black" value="1">Select State</option>
+                    <option value="2">Option 1</option>
+                    <option value="3">Option 2</option>
+                    <option value="4">Option 3</option>
+                  </select>
+
+
+
+                </div>
+                <div class="col-md-6 mb-4 mt-4">
+                  <label class="form-label text-black" for="form8">Select City</label>
+                  <select class="select  ps-3 mb-0 text-dark w-50 h-100 reginput" name="regcity" id="city_id">
+                    <option value="1" class="text-dark">Select city</option>
+                    <option value="2">Option 1</option>
+                    <option value="3">Option 2</option>
+                    <option value="4">Option 3</option>
+                  </select>
+
+
+                </div>
+              </div>
+
+
+
+              <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+
+                <h6 class="mb-0 me-4">Gender: </h6>
+
+                <div class="form-check form-check-inline mb-0 me-4">
+                  <input class="form-check-input" type="radio" name="gender" id="femaleGender" value="female" />
+                  <label class="form-check-label text-black" for="femaleGender">Female</label>
+                </div>
+
+                <div class="form-check form-check-inline mb-0 me-4">
+                  <input class="form-check-input" type="radio" name="gender" id="maleGender" value="male" />
+                  <label class="form-check-label text-black" for="maleGender">Male</label>
+                </div>
+
+                <div class="form-check form-check-inline mb-0">
+                  <input class="form-check-input" type="radio" name="gender" id="otherGender" value="other" />
+                  <label class="form-check-label text-black" for="otherGender">Other</label>
+                </div>
+
+              </div>
+
+
+              <div class="row">
+                <div class="col-md-8 mb-4 ">
+
+                  <label class="form-label text-black" for="selectplan">Selected Plan</label>
+                  <input type="text" name="" id="selectplan_value">
+                  <input type="text" name="selectplan" hidden id="selectplan">
+                  <span class="text-danger error_msg"></span>
+                </div>
+                <div class="col-md-4 mb-4 ">
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-primary" id="plan_modal" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
+                    SELECT PLAN
+                  </button>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">All plans</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+
+                          <table class="table" id="table">
+                            <thead>
+                              <tr class="table-warning">
+                                <th scope="col">#</th>
+                                <th scope="col"> PLAN NAME</th>
+                                <th scope="col">VALIDITY</th>
+                                <th scope="col">AMOUNT</th>
+                                <th scope="col">GENDER</th>
+                                <th scope="col">ACTION</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {% for data in plans %}
+                              <tr class="table-warning">
+
+                                <th scope="row">{{forloop.counter}}</th>
+                                <input type="text" hidden value="{{data.id}}" name="" id="">
+                                <td>{{data.plan_name}}</td>
+                                <td>{{data.plan_validity}}</td>
+                                <td>{{data.plan_amount}}</td>
+                                <td>{{data.target_gender}}</td>
+                                <td><button type="button" class="btn btn-primary action" id="action">Select</button>
+                                </td>
+
+
+                              </tr>
+
+                              {% endfor %}
+                              <script>
+                                $(document).ready(function () {
+                                  console.log("working 1")
+                                  $("#table:has(tr)").mouseover(function (e) {
+                                    $(this).css('cursor', 'pointer')
+                                    $(this).css('border-color', 'red')
+                                    console.log("working 2")
+                                  })
+                                });
+                              </script>
+
+                            </tbody>
+                          </table>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <label class="form-label text-black" for="">DOB</label>
+                  <input type="date" name="regdob" id="date_id" class="form-control form-control-sm reginput" />
+                  <span class="text-danger error_msg"></span>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <label class="form-label text-black" for="form8">Blood Group</label>
+                  <select class="select  ps-3 mb-0 text-dark w-75 h-50 reginput" name="bloodgroup" id="bloodgroup_id">
+                    <option value="option1" selected class="text-dark">A+ve</option>
+                    <option value="option2">B+ve</option>
+                    <option value="option3">O+ve</option>
+                    <option value="option4">AB+ve</option>
+                    <option value="option4">A-ve</option>
+                    <option value="option4">B-ve</option>
+                    <option value="option4">O-ve</option>
+                    <option value="option4">AB-ve</option>
+                  </select>
+
+                </div>
+              </div>
+
+
+              <div class="form-outline mb-2">
+                <label class="form-label text-black" for="form9">Phone</label>
+                <input type="number" name="regphone" id="phone_id" class="form-control form-control-sm reginput"
+                  placeholder="Enter phone number" />
+                <span class="text-danger error_msg"></span>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <label class="form-label text-black" for="form3">Enter Height</label>
+                    <input type="text" name="userheight" id="height_id" class="form-control form-control-sm reginput"
+                      placeholder="weight" />
+                    <span class="text-danger error_msg"></span>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <label class="form-label text-black" for="form3Example1n">Enter Weight</label>
+                    <input type="text" name="userweight" id="weight_id" class="form-control form-control-sm reginput"
+                      placeholder="height" />
+                    <span class="text-danger error_msg"></span>
+
+                  </div>
+                </div>
+              </div>
+
+              <small style="color: red;">{{msg}}</small>
+
+              <div class="form-outline mb-2">
+                <label class="form-label text-black" for="photo_id">Upload photo</label>
+                <input type="file" name="userimage" id="photo_id" class="form-control form-control-sm reginput"
+                   />
                 
               </div>
+
+
+
+              <div class="d-flex justify-content-between pt-3">
+                <button type="reset" class="btn btn-light btn-sm">Reset all</button>
+                <button type="submit" class="btn btn-warning btn-sm ms-2" id="submit_btn">Submit form</button>
+              </div>
+
+              
+
+
+             
+
+
             </div>
+
           </div>
+
         </div>
       </div>
     </div>
-    
+    </div>
+    </div>
+
   </form>
-  </section>
-  </body>
+</section>
 
-  
+
+  <script>
+    $(document).ready(function() {
+      $('#registerform').submit(function(e) {
+        e.preventDefault(); // Prevent the form from submitting
+
+        var isValid = true;
+
+        // Validate Name
+        var name = $("input[name=regname1]").val();
+        if (name === '') {
+          isValid = false;
+          $('#nameError').text('Name is required');
+        } else {
+          $('#nameError').text('');
+        }
+
+        // Validate Email Format
+        var email = $("input[name=regemail]").val();
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          isValid = false;
+          $('#emailError').text('Invalid email format');
+        } else {
+          $('#emailError').text('');
+        }
+
+        // Validate Password
+        var password = $("input[name=password1]").val();
+        if (password === '') {
+          isValid = false;
+          $('#passwordError').text('Password is required');
+        } else {
+          $('#passwordError').text('');
+        }
+
+        // Validate Confirm Password
+        var confirmPassword = $("input[name=password2]").val();
+        if (confirmPassword === '') {
+          isValid = false;
+          $('#confirmPasswordError').text('Confirm Password is required');
+        } else if (password !== confirmPassword) {
+          isValid = false;
+          $('#confirmPasswordError').text('Passwords do not match');
+        } else {
+          $('#confirmPasswordError').text('');
+        }
+
+        if (isValid) {
+          // Form validation is successful, you can proceed with form submission
+          $(this).unbind('submit').submit();
+        }
+      });
+    });
+  </script>
+
+
+
+
+
+<!--<script>
+  $(document).ready(function () {
+    $('#submit_btn').prop('disabled', true)
+    
+
+    $('#firstname_id, #lastname_id, #username_id, #date_id, #address_id, #phone_id, #height_id, #weight_id, #pincode_id').on('keyup blur', function () {
+      var $inputField = $(this);
+      var $errorMsg = $inputField.siblings('.error_msg');
+      if($inputField.attr('id') === 'firstname_id'){
+        if(!$inputField.val()){
+          $errorMsg.text('name is required')
+        }else{
+          $errorMsg.text('')
+        }
+
+        
+
+      }
+      if($inputField.attr('id') === 'username_id'){
+        if(!$inputField.val()){
+          $errorMsg.text('username is required')
+        }else{
+          $errorMsg.text('')
+        }
+
+        
+
+      }
+      if($inputField.attr('id') === 'address_id'){
+        if(!$inputField.val()){
+          $errorMsg.text('address is required')
+        }else{
+          $errorMsg.text('')
+        }
+
+        
+
+      }
+      if($inputField.attr('id') === 'phone_id'){
+        if(!$inputField.val()){
+          $errorMsg.text('this field is required')
+        }else{
+          $errorMsg.text('')
+        }
+
+        
+
+      }
+      if($inputField.attr('id') === 'height_id'){
+        if(!$inputField.val()){
+          $errorMsg.text('this field is required')
+        }else{
+          $errorMsg.text('')
+        }
+
+        
+
+      }
+      if($inputField.attr('id') === 'weight_id'){
+        if(!$inputField.val()){
+          $errorMsg.text('this field is required')
+        }else{
+          $errorMsg.text('')
+        }
+
+        
+
+      }
+    })
+    $('#password1_id, #password2_id').on('keyup blur', function (){
+
+      
+      $CheckPassword = $("#password1_id").val(); 
+      $CheckPasswordtwo = $("#password2_id").val(); 
+      
+
+      if ($CheckPassword === " " && $CheckPasswordtwo === " " ) {
+
+        $errorMsg.text('This feild is required!')
+
+      } else if ($CheckPasswordtwo != $CheckPassword) {
+       if ($inputField.attr('id') === ('password2_id')) {
+          $errorMsg.text('password is not matching')
+
+       }else {
+        $errorMsg.text('')
+       }
+
+     }else {
+        $errorMsg.text('')
+      }
+    })
+
+     
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+  })
+
+
+
+
+
+
+
+</script>-->
+
+
 {% endblock %}
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
-
-
-$(document).ready(function(){
-  $("form").submit(function(){
-      var name = $("#regname1").val();
-      var email = $("#regemail").val();
-      var password = $("#password1").val();
-      var cpassword = $("#cpassword2").val();
-      $(".error").remove();
-      
-      if (name == "") {
-          $("#regname1").after('<span class="error">This field is required</span>');
-          return false;
-      }
-      
-      if (email == "") {
-          $("#regemail").after('<span class="error">This field is required</span>');
-          return false;
-      } else {
-          var regEx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i;
-          var validEmail = regEx.test(email);
-          if (!validEmail) {
-              $("#regemail").after('<span class="error">Enter a valid email</span>');
-              return false;
-          }
-      }
-      
-      if (password == "") {
-          $("#password1").after('<span class="error">This field is required</span>');
-          return false;
-      } else {
-          if (password.length < 8) {
-              $("#password1").after('<span class="error">Password must be at least 8 characters long</span>');
-              return false;
-          }
-      }
-      
-      if (cpassword == "") {
-          $("#password2").after('<span class="error">This field is required</span>');
-          return false;
-      } else {
-          if (cpassword != password) {
-              $("#password2").after('<span class="error">Passwords do not match</span>');
-              return false;
-          }
-      }
-  });
-});
-</script>
