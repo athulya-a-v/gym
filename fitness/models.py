@@ -1,5 +1,4 @@
 from django.db import models
-
 # Create your models here.
 
 
@@ -29,6 +28,7 @@ class Register(models.Model):
     user_weight = models.CharField(max_length=25, default="")
     user_photo = models.ImageField(upload_to ='userphoto', default="")
     time_stamp = models.DateTimeField(auto_now_add=True)
+    attendance = models.CharField(max_length=10, choices=[('present', 'Present'), ('absent', 'Absent')])
 
 
     

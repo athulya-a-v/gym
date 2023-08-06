@@ -10,8 +10,9 @@
 
         <div class="card-body p-md-8 text-black bg-white">
       <h2 class="text-uppercase text-center fw-bold text-dark report_font pb-4 " >Mark Attendance</h2>
-  
-  
+          {% if message %}
+          <p>{{message}}</p>
+          {% endif %}
       <table class="table table-white">
         <thead>
           <tr class="text-black">
@@ -30,12 +31,13 @@
           
 
                 <div class="form-check form-check-inline mb-0 me-4">
-                  <input class="form-check-input" type="radio" name="attendance_{{forloop.counter}}" id="" value="present" />
+                  <input class="form-check-input" type="radio" name="attendance_{{forloop.counter}}" id="" value="present" 
+                  {% if data.attendance == 'present' %} checked {% endif %}/>
                   <label class="form-check-label text-black" for="femaleGender">Present</label>
                 </div>
 
                 <div class="form-check form-check-inline mb-0 me-4">
-                  <input class="form-check-input" type="radio" name="attendance_{{forloop.counter}}" id="" value="absent" />
+                  <input class="form-check-input" type="radio" name="attendance_{{forloop.counter}}" id="" value="absent" {% if data.attendance == 'absent' %} checked {% endif %} />
                   <label class="form-check-label text-black" for="maleGender">Absent</label>
                 </div>
 

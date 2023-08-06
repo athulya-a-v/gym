@@ -58,7 +58,7 @@
               </div>
               <div class="row">
                 <div class="col-md-3 mb-4"> 
-                    <label class="form-label text-black" for="form3">Total Hours to work:</label>
+                    <label class="form-label text-black" for="form3">Total Hours to work:{{total_days_to_work}}</label>
                 </div>
                 <div class="col-md-3 mb-4">
                   <div class="form-outline">
@@ -66,12 +66,12 @@
                 </div>
                   </div>
                   <div class="col-md-3 mb-4"> 
-                    <label class="form-label text-black" for="form3">hours worked:</label>
+                    <label class="form-label text-black" for="form3">hours worked:{{present_days}}</label>
                 </div>
 
                 <div class="col-md-3 mb-4">
                   <div class="form-outline">
-                    <input type="text"  class="form-control form-control-sm " style="border: 0px; outline: none;"/>
+                    <input type="text"  class="form-control form-control-sm " style="border: 0px; outline: none;"value="{{present_days.present_days}}"/>
                 </div>
                 </div>
               </div>

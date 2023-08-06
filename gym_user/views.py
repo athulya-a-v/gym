@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from gym_admin.models import CreatePlan, AddMachineryDetails 
 from .models import EnterFeedback
 from gym_trainee.models import *
+import datetime
+from django.utils import timezone
 
 # Create your views here.
 def userhome(request):
@@ -42,9 +44,22 @@ def workoutsummary(request, id):
 
 def healthstatus(request):
     user_id = request.session['user_id']
-    users_name = Register.objects.get(id=user_id)
+    users = Register.objects.get(id=user_id)
     health_status = UserHealthStatus.objects.filter(user_fk=user_id).first()
-    return render(request, 'healthstatus.html', {"health_status":health_status, "users_name":users_name})
+    today = timezone.now()
+    print("today: ",today)
+    one_week_ago = today - datetime.timedelta(days=7)
+    print("one_week_ago: ",one_week_ago)
+    print("user: ",users.time_stamp)
+    total_days_to_work = (today - users.time_stamp).days // 7 * 6
+    print("total_days_to_work: ",total_days_to_work)
+    present_days = UserAttendance.objects.filter(
+        user_fk=users,
+        timestamp__gte=one_week_ago,
+        timestamp__lt=today,
+        attendance="present"
+    ).count()
+    return render(request, 'healthstatus.html', {"health_status":health_status, "users_name":users, "total_days_to_work":total_days_to_work, "present_days": present_days})
 def routineplan(request):
     exc_type = UploadRoutine.objects.all()
 

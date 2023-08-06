@@ -3,6 +3,7 @@ from gym_admin.models import TraineeRegister
 from gym_trainee.models import UserHealthStatus, UploadRoutine
 from fitness.models import Register
 from .models import *
+import datetime
 
 # Create your views here.
 def traineehome(request):
@@ -28,13 +29,31 @@ def uploadhealthstatus(request, id):
     return render(request, 'uploadhealthstatus.html', {"user_status":user_status})
 def markattendance(request):
     user_detail = Register.objects.all()
+    now = datetime.datetime.now()
+    midnight = now.replace(hour=0, minute=0,second=0, microsecond=0)
+    if now > midnight and not request.user.is_anonymous:
+        user_detail.update(attendance=None)
     if request.method == 'POST':
+        
         for user in user_detail:
-            
-            attendence = request.POST.get("attendance_"+str(user.id), 'absent')
-            mark_attendance = UserAttendance(user_fk=user, attendance=attendence)
-            mark_attendance.save()
+            attendance = request.POST.get("attendance_"+str(user.id), 'absent')
+            if user.attendance == "present" or user.attendance == "absent":
+                UserAttendance.objects.filter(user_fk=user).update(attendance=attendance)
+                Register.objects.filter(id=user.id).update(attendance=attendance)
+            else:
+                mark_attendance = UserAttendance(user_fk=user, attendance=attendance)
+                user.attendance = attendance
+                user.save()
+                mark_attendance.save()
+        return redirect("gym_trainee:markattendance")
+        # else:
+        #     message = "Attendance can only be marked until 12 AM"
+        #     return render(request,'markattendance.html', {"user_detail":user_detail, "message":message})
+        # for  user in user_detail:
+        #     user.attendance  = UserAttendance.objects.filter(user_fk=user, timestamp__gte=midnight)
     return render(request,'markattendance.html', {"user_detail":user_detail})
+        
+
 def uploadroutine(request):
     msg = 'msg'
     if request.method == 'POST':
@@ -75,10 +94,10 @@ def dietplan(request, id):
         all_foodtoadd = []
         foodtoadd_dict = {}
         required_food = []
-
+        print(foodto_add)
         for foodtoadd in foodto_add:
             foodtoadd_data = {}
-            quantity_key = foodtoadd + '_quantity'
+            quantity_key = foodtoadd + '_type'
             quantity = request.POST[quantity_key]
             print(foodtoadd, quantity )
             foodtoadd_data["foodtoadd"] = foodtoadd
@@ -94,7 +113,7 @@ def dietplan(request, id):
         notrequired_food = []
         for foodtoavoid in foodto_avoid:
             foodtoavoid_data ={}
-            quantity_key = foodtoavoid + '_quantity'
+            quantity_key = foodtoavoid + '_type'
             quantity = request.POST[quantity_key]
             print(foodtoavoid, quantity )
             foodtoavoid_data["foodtoavoid"] = foodtoavoid
@@ -110,7 +129,7 @@ def dietplan(request, id):
         pre_workout_food = []
         for preworkoutfood in preworkout_food:
             preworkout_data ={}
-            quantity_key = preworkoutfood + '_quantity'
+            quantity_key = preworkoutfood + '_type'
             quantity = request.POST[quantity_key]
             print(preworkoutfood, quantity )
             preworkout_data["preworkoutfood"] = preworkoutfood
@@ -126,7 +145,7 @@ def dietplan(request, id):
         post_workout_food = []
         for postworkoutfood in postworkout_food:
             postworkout_data = {}
-            quantity_key = postworkoutfood + '_quantity'
+            quantity_key = postworkoutfood + '_type'
             quantity = request.POST[quantity_key]
             print(postworkout_data, quantity )
             postworkout_data["postworkoutfood"] = postworkout_data
